@@ -70,7 +70,13 @@ button:focus-visible {
 /* CUSTOM STYLES */
 
 :root {
-  --main-background-color: #8CCEEA;
+  /* the color from figma is identical to devtools highlight color, so i change it */
+  /* switch to "true" in production (yeah, manually) */
+  --true-main-background-color: #8CCEEA;
+  --fixed-main-background-color: #97C1E6;
+  /* --main-background-color: var(--true-main-background-color); */
+  --main-background-color: var(--fixed-main-background-color);
+
   --main-text-color: #363636;
   --main-green-color: #D0F050;
 
@@ -78,9 +84,12 @@ button:focus-visible {
   color: var(--main-text-color);
 }
 
-#root {
+html, body, #root {
   height: 100vh;
   width: 100vw;
+}
+
+#root {
   display: flex;
   flex-direction: column;
   align-items: center;

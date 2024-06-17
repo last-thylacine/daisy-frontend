@@ -1,0 +1,27 @@
+.button {
+	height: 56px;
+	border-radius: 40px;
+	flex: 1;
+}
+
+.buttonActive {
+	background-color: white;
+}
+
+.icon {
+	width: 32px;
+	height: 32px;
+}
+
+.label {
+	// figma
+	font-family: SF Pro Rounded;
+	font-size: 10px;
+	font-weight: 600;
+	line-height: 12px;
+	letter-spacing: 0.5699999928474426px;
+	text-align: center;
+
+	// custom
+	margin-top: 2px;
+}

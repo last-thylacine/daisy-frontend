@@ -1,0 +1,26 @@
+.container {
+	margin: 53px 0 58px 0;
+}
+
+.image {
+	height: 64px;
+	width: 64px;
+}
+
+.text {
+	// figma
+	font-family: SF Pro Rounded;
+	font-size: 56px;
+	font-weight: 700;
+	line-height: 66.83px;
+	letter-spacing: 0.30000001192092896px;
+	text-align: left;
+
+	// custom
+	margin-left: 8px;
+
+	/* workaround: in browser
+		600 is SFProRounded-Bold
+		700 is SFProRounded-Heavy */
+	font-weight: 600;
+}

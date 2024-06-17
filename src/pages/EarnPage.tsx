@@ -1,3 +1,9 @@
-const EarnPage = () => <div>earn</div>
+const t = {
+	earn: "Earn more coins",
+}
+
+const EarnPage = () => (
+	<div>{t.earn}</div>
+)
 
 export default EarnPage

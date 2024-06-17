@@ -1,6 +1,9 @@
 import coinsIcon from "../assets/pepicons-print_coins.svg"
 import flowerBudIcon from "../assets/pepicons-print_flower-bud.svg"
 import personsIcon from "../assets/pepicons-print_persons.svg"
+import { BottomNavigationButton } from "./BottomNavigationButton"
+import { Row } from "./Row"
+import css from './BottomNavigation.module.scss'
 
 const t = {
 	earn: "Earn",
@@ -9,18 +12,21 @@ const t = {
 }
 
 export const BottomNavigation = () => (
-	<div>
-		<div>
-			<img src={coinsIcon} />
-			<div>{t.earn}</div>
-		</div>
-		<div>
-			<img src={flowerBudIcon} />
-			<div>{t.grow}</div>
-		</div>
-		<div>
-			<img src={personsIcon} />
-			<div>{t.friends}</div>
-		</div>
-	</div>
+	<Row class={css.container}>
+		<BottomNavigationButton
+			page={'/earn'}
+			icon={coinsIcon}
+			label={t.earn}
+		/>
+		<BottomNavigationButton
+			page={'/grow'}
+			icon={flowerBudIcon}
+			label={t.grow}
+		/>
+		<BottomNavigationButton
+			page={'/friends'}
+			icon={personsIcon}
+			label={t.friends}
+		/>
+	</Row>
 )

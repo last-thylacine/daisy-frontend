@@ -1,0 +1,16 @@
+.container {
+	// figma
+	width: 358px;
+	height: 64px;
+	border-radius: 40px;
+	padding: 4px 5px;
+	box-sizing: border-box;
+
+	// custom
+	background-color: var(--main-green-color);
+	justify-content: space-evenly;
+	position: absolute;
+	bottom: 16px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
