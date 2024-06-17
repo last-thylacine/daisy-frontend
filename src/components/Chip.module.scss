@@ -1,0 +1,11 @@
+.Chip {
+	width: 175px;
+	height: 56px;
+	border-radius: 40px;
+	background-color: #fff;
+	margin-top: 16px;
+
+	& + & {
+		margin-left: 8px;
+	}
+}
