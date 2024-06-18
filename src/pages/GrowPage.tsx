@@ -1,6 +1,7 @@
 import { Chip } from "../components/Chip"
 import { CoinCounter } from "../components/CoinCounter"
 import { Daisy } from "../components/Daisy"
+import { FarmButton } from "../components/FarmButton"
 import { Row } from "../components/Row"
 
 const GrowPage = () => (
@@ -11,6 +12,7 @@ const GrowPage = () => (
 		</Row>
 		<CoinCounter />
 		<Daisy />
+		<FarmButton />
 	</>
 )
 
