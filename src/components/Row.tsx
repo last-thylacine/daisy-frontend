@@ -10,7 +10,7 @@ export const Row: ParentComponent<Props> = (props) => {
 		<div
 			{...passed}
 			classList={{
-				[css.column]: true,
+				[css.row]: true,
 				...(local.class ? {[local.class]: true} : {}),
 				...(local.classList ?? {}),
 			}}
