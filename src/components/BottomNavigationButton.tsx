@@ -1,9 +1,11 @@
+import { Component } from 'solid-js'
+
 import { useCurrentPage } from "../hooks/useCurrentPage"
 import { useSwitchTab } from "../hooks/useSwitchTab"
 import { Column } from "./Column"
 import css from './BottomNavigationButton.module.scss'
 
-export const BottomNavigationButton = (props) => {
+export const BottomNavigationButton: Component = (props) => {
 	const currentPage = useCurrentPage()
 	const switchTab = useSwitchTab()
 	return (

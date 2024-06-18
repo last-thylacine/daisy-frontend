@@ -1,12 +1,19 @@
+import { ParentComponent, JSX, splitProps } from 'solid-js'
+
 import css from './Column.module.scss'
 
-export const Column = (props) => {
+type Props = JSX.HTMLAttributes<HTMLDivElement>
+
+export const Column: ParentComponent<Props> = (props) => {
+	const [local, passed] = splitProps(props, ["class", "classList"])
 	return (
 		<div
-			onClick={props.onClick}
-			classList={{[css.column]: true, [props.class]: !!props.class, ...(props.classList ?? {})}}
-		>
-			{props.children}
-		</div>
+			{...passed}
+			classList={{
+				[css.column]: true,
+				...(local.class ? {[local.class]: true} : {}),
+				...(local.classList ?? {}),
+			}}
+		/>
 	)
 }

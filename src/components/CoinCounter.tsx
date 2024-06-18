@@ -1,9 +1,11 @@
+import { Component } from 'solid-js'
+
 import { app } from "../common/app"
 import dzFlowerImage from "../assets/dz-flower.svg"
 import { Row } from './Row'
 import css from './CoinCounter.module.scss'
 
-export const CoinCounter = () => {
+export const CoinCounter: Component = () => {
 	const { store } = app
 	return (
 		<Row class={css.container}>

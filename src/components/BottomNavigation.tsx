@@ -1,3 +1,5 @@
+import { Component } from 'solid-js'
+
 import coinsIcon from "../assets/pepicons-print_coins.svg"
 import flowerBudIcon from "../assets/pepicons-print_flower-bud.svg"
 import personsIcon from "../assets/pepicons-print_persons.svg"
@@ -11,7 +13,7 @@ const t = {
 	friends: "Friends",
 }
 
-export const BottomNavigation = () => (
+export const BottomNavigation: Component = () => (
 	<Row class={css.container}>
 		<BottomNavigationButton
 			page={'/earn'}

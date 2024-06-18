@@ -1,10 +1,19 @@
+import { ParentComponent, JSX, splitProps } from 'solid-js'
+
 import css from './Row.module.scss'
 
-export const Row = (props) => (
-	<div
-		onClick={props.onClick}
-		classList={{[css.row]: true, [props.class]: !!props.class, ...(props.classList ?? {})}}
-	>
-		{props.children}
-	</div>
-)
+type Props = JSX.HTMLAttributes<HTMLDivElement>
+
+export const Row: ParentComponent<Props> = (props) => {
+	const [local, passed] = splitProps(props, ["class", "classList"])
+	return (
+		<div
+			{...passed}
+			classList={{
+				[css.column]: true,
+				...(local.class ? {[local.class]: true} : {}),
+				...(local.classList ?? {}),
+			}}
+		/>
+	)
+}
