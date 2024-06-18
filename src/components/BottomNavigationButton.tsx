@@ -5,7 +5,13 @@ import { useSwitchTab } from "../hooks/useSwitchTab"
 import { Column } from "./Column"
 import css from './BottomNavigationButton.module.scss'
 
-export const BottomNavigationButton: Component = (props) => {
+type Props = {
+	page: string
+	icon: string
+	label: string
+}
+
+export const BottomNavigationButton: Component<Props> = (props) => {
 	const currentPage = useCurrentPage()
 	const switchTab = useSwitchTab()
 	return (
