@@ -1,8 +1,8 @@
 import { createRoot } from "solid-js"
 import { createStore } from "solid-js/store"
 
-const INITIAL_COIN_BALANCE = 729501
-const INITIAL_COINS_PER_CLICK = 10
+const INITIAL_COIN_BALANCE = 16512372
+const INITIAL_COINS_PER_CLICK = 14
 
 function createApp() {
 	const [store, setStore] = createStore({
