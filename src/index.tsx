@@ -12,8 +12,8 @@ const FriendsPage = lazy(() => import("./pages/FriendsPage"))
 
 render(() => (
 	<Router root={App}>
-		<Route info={{ page: '/earn'    }} path={"/earn"}        component={EarnPage} />
-		<Route info={{ page: '/grow'    }} path={["/", "/grow"]} component={GrowPage} />
-		<Route info={{ page: '/friends' }} path={"/friends"}     component={FriendsPage} />
+		<Route info={{ tab: '/earn'    }} path={"/earn"}        component={EarnPage} />
+		<Route info={{ tab: '/grow'    }} path={["/", "/grow"]} component={GrowPage} />
+		<Route info={{ tab: '/friends' }} path={"/friends"}     component={FriendsPage} />
 	</Router>
 ), document.getElementById('root')!)
