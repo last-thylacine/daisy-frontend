@@ -1,13 +1,16 @@
-import { Component, JSX } from 'solid-js'
+import { ParentComponent } from 'solid-js'
 
 import css from './Drawer.module.scss'
 
-type Props = JSX.HTMLAttributes<HTMLDivElement>
-
-export const Drawer: Component<Props> = () => {
+export const Drawer: ParentComponent = (props) => {
 	return (
-		<div class={css.overlay}>
-			<div />
-		</div>
+		<>
+			<div class={css.overlay}></div>
+			<div class={css.container}>
+				<div class={css.drawer}>
+					{props.children}
+				</div>
+			</div>
+		</>
 	)
 }

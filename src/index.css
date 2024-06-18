@@ -80,6 +80,7 @@ button:focus-visible {
 
   --main-text-color: #363636;
   --main-green-color: #D0F050;
+  --main-upgrade-background-color: rgb(172, 228, 252);
 
   background-color: var(--main-background-color);
   color: var(--main-text-color);
