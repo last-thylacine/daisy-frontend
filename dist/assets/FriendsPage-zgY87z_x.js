@@ -1,1 +1,0 @@
-import{i as t,t as s}from"./index-DHwIXk9V.js";var r=s("<div>");const i={title:"Invite friends!",subtitle:"You and your friend will receive bonuses"},n=()=>[(()=>{var e=r();return t(e,()=>i.title),e})(),(()=>{var e=r();return t(e,()=>i.subtitle),e})()];export{n as default};
