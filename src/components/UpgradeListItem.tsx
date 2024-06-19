@@ -17,13 +17,11 @@ type Props = {
 export const UpgradeListItem: Component<Props> = (props) => {
 	return (
 		<Row class={css.container}>
-			{/* <div class={css.imageContainer}> */}
-				<img
-					width={props.iconWidth}
-					height={props.iconHeight}
-					src={props.icon}
-				/>
-			{/* </div> */}
+			<img
+				width={props.iconWidth}
+				height={props.iconHeight}
+				src={props.icon}
+			/>
 			<div class={css.textContainer}>
 				<div class={css.title}>
 					{props.name}
