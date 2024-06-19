@@ -1,3 +1,5 @@
+@use '../mixins.scss';
+
 .container {
 	margin: 53px 0 58px 0;
 }
@@ -11,11 +13,7 @@
 	text-align: left;
 
 	// custom
+	@include mixins.fix700;
 	margin-left: 8px;
 	font-variant-numeric: tabular-nums;
-
-	/* workaround: in browser
-		600 is SFProRounded-Bold
-		700 is SFProRounded-Heavy */
-	font-weight: 600;
 }

@@ -1,10 +1,8 @@
-import { Component, For, createSignal } from 'solid-js'
+import { Component, createSignal } from 'solid-js'
 
-import { UPGRADES } from '../common/fakeData'
 import farmIcon from "../assets/farm_48x46.76_3x.png"
 import { Column } from './Column'
-import { Drawer } from './Drawer'
-import { UpgradeListItem } from './UpgradeListItem'
+import { FarmDrawer } from './FarmDrawer'
 import css from './FarmButton.module.scss'
 
 const t = {
@@ -27,13 +25,7 @@ export const FarmButton: Component = () => {
 					{t.label}
 				</div>
 			</Column>
-			{active() && (
-				<Drawer onClose={() => setActive(false)}>
-					<For each={UPGRADES}>
-						{(upgrade) => <UpgradeListItem {...upgrade} />}
-					</For>
-				</Drawer>
-			)}
+			{active() && <FarmDrawer onClose={() => setActive(false)} />}
 		</>
 	)
 }
