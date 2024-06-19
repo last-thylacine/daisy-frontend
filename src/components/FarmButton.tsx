@@ -1,11 +1,11 @@
-import { Component, createSignal } from 'solid-js'
+import { Component, For, createSignal } from 'solid-js'
 
-// import { UPGRADES } from '../common/fakeData'
+import { UPGRADES } from '../common/fakeData'
 import farmIcon from "../assets/farm_48x46.76_3x.png"
 import { Column } from './Column'
-import css from './FarmButton.module.scss'
 import { Drawer } from './Drawer'
-// import { ChevronButton } from './ChevronButton'
+import { UpgradeListItem } from './UpgradeListItem'
+import css from './FarmButton.module.scss'
 
 const t = {
 	label: "Farm",
@@ -30,11 +30,9 @@ export const FarmButton: Component = () => {
 			</Column>
 			{active() && (
 				<Drawer>
-					{/* <For each={UPGRADES}>
-						{(upgrade) => (
-							<UpgradeListItem upgrade={upgrade} />
-						)}
-					</For> */}
+					<For each={UPGRADES}>
+						{(upgrade) => <UpgradeListItem {...upgrade} />}
+					</For>
 				</Drawer>
 			)}
 		</>
