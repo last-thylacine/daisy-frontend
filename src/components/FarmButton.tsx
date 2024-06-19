@@ -13,12 +13,11 @@ const t = {
 
 export const FarmButton: Component = () => {
 	const [active, setActive] = createSignal(false)
-	const handleClick = () => setActive(true)
 	return (
 		<>
 			<Column
 				class={css.button}
-				onClick={handleClick}>
+				onClick={() => setActive(true)}>
 				<img
 					width="48"
 					height="46.76"
@@ -29,7 +28,7 @@ export const FarmButton: Component = () => {
 				</div>
 			</Column>
 			{active() && (
-				<Drawer>
+				<Drawer onClose={() => setActive(false)}>
 					<For each={UPGRADES}>
 						{(upgrade) => <UpgradeListItem {...upgrade} />}
 					</For>

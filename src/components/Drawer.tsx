@@ -2,15 +2,16 @@ import { ParentComponent } from 'solid-js'
 
 import css from './Drawer.module.scss'
 
-export const Drawer: ParentComponent = (props) => {
+type Props = {
+	onClose: () => void
+}
+
+export const Drawer: ParentComponent<Props> = (props) => {
 	return (
-		<>
-			<div class={css.overlay}></div>
-			<div class={css.container}>
-				<div class={css.drawer}>
-					{props.children}
-				</div>
+		<div onClick={props.onClose} class={css.overlay}>
+			<div onClick={e => e.stopPropagation()} class={css.drawer}>
+				{props.children}
 			</div>
-		</>
+		</div>
 	)
 }

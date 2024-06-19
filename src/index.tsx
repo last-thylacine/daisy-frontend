@@ -3,8 +3,8 @@ import { lazy } from "solid-js"
 import { render } from 'solid-js/web'
 import { Router, Route } from "@solidjs/router"
 
-import './index.css'
 import { App } from "./components/App"
+import './index.scss'
 
 const EarnPage = lazy(() => import("./pages/EarnPage"))
 const GrowPage = lazy(() => import("./pages/GrowPage"))
