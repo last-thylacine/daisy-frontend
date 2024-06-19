@@ -1,4 +1,6 @@
 // background: #8CCEEA;
+// background is changed, revert before launch
+// eruda is enabled, revert before launch
 
 // coin_balance
 // coin_per_tap
