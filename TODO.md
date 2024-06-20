@@ -16,3 +16,7 @@
 // prerender routes
 
 console.log({ max: fmtNumber(Number.MAX_SAFE_INTEGER) })
+
+// rename.sh
+
+// if PROD ...

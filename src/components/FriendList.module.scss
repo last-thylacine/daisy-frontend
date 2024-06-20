@@ -1,12 +1,5 @@
 @use '../mixins.scss';
 
-.label {
-	font-family: SF Pro Rounded;
-	font-size: 16px;
-	font-weight: 700;
-	line-height: 21px;
-	letter-spacing: 0.4099999964237213px;
-	text-align: left;
-
-	@include mixins.fix700;
-}
+// .label {
+// 	@include mixins.fix700;
+// }

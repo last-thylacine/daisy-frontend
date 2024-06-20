@@ -1,0 +1,16 @@
+@use '../mixins.scss';
+
+.label {
+	// figma
+	font-family: SF Pro Rounded;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 21px;
+	letter-spacing: 0.4099999964237213px;
+	text-align: left;
+
+	// custom
+	@include mixins.fix700;
+	margin: 16px 0 4px 0;
+	align-self: flex-start;
+}
