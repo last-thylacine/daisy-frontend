@@ -4,6 +4,6 @@ import css from './FriendListItem.module.scss'
 
 export const FriendListItem: Component = () => {
 	return (
-		<div class={css.container}></div>
+		<div class={css.container} />
 	)
 }

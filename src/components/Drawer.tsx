@@ -12,7 +12,7 @@ export const Drawer: ParentComponent<Props> = (props) => {
 	return (
 		<div
 			class={css.overlay}
-			onClick={local.onClose}
+			onClick={() => local.onClose()}
 		>
 			<Column
 				{...passed}

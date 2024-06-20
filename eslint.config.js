@@ -1,16 +1,28 @@
 import globals from "globals"
-import pluginJs from "@eslint/js"
-import tseslint from "typescript-eslint"
-import pluginSolid from 'eslint-plugin-solid'
+import eslint from "@eslint/js"
+import ts_eslint from "typescript-eslint"
+import solidjs from 'eslint-plugin-solid'
 
 export default [
 	{
-		languageOptions: {
-			globals: globals.browser
-		}
+		languageOptions: { globals: globals.browser },
+		rules: {
+			"@typescript-eslint/no-unused-vars": [
+				"error",
+				{
+					"args": "all",
+					"argsIgnorePattern": "^_",
+					"caughtErrors": "all",
+					"caughtErrorsIgnorePattern": "^_",
+					"destructuredArrayIgnorePattern": "^_",
+					"varsIgnorePattern": "^_",
+					"ignoreRestSiblings": true,
+				},
+			],
+		},
 	},
-	pluginJs.configs.recommended,
-	...tseslint.configs.recommended,
-	pluginSolid.configs['flat/recommended'],
-	pluginSolid.configs['flat/typescript'],
+	eslint.configs.recommended,
+	...ts_eslint.configs.recommended,
+	solidjs.configs['flat/recommended'],
+	solidjs.configs['flat/typescript'],
 ]
