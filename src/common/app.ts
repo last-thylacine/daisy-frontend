@@ -18,6 +18,10 @@ function createApp() {
 	const [store, setStore] = createStore({
 		coins: null as number | null,
 		coins_per_tap: null as number | null,
+		energy: null as number | null,
+		max_energy: null as number | null,
+		energy_level: null as number | null,
+		tap_level: null as number | null,
 		initData: createInitData(),
 		upgrades: UPGRADES,
 		tasks: TASKS,
