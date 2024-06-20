@@ -1,0 +1,39 @@
+@use '../mixins.scss';
+
+.container {
+	box-sizing: border-box;
+	height: 64px;
+	padding: 12px;
+	border-radius: 24px;
+	background-color: white;
+	align-self: stretch;
+}
+
+.title {
+	// figma
+	font-family: SF Pro Rounded;
+	font-size: 15px;
+	font-weight: 700;
+	line-height: 20px;
+	letter-spacing: 0.4399999976158142px;
+	text-align: left;
+
+	// custom
+	@include mixins.fix700;
+	margin-left: 12px;
+	flex-grow: 1;
+}
+
+.chevronLabel {
+	// figma
+	font-family: SF Pro Rounded;
+	font-size: 13px;
+	font-weight: 600;
+	line-height: 20px;
+	letter-spacing: 0.5099999904632568px;
+	text-align: left;
+
+	// custom
+	margin-left: 4px;
+	margin-right: 8px;
+}

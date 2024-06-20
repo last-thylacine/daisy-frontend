@@ -1,3 +1,4 @@
+import { DailyBonusButton } from "../components/DailyBonusButton"
 import dzFlowerImage from "../assets/dz_96x96_3x.png"
 
 const t = {
@@ -12,6 +13,7 @@ const EarnPage = () => (
 			src={dzFlowerImage}
 		/>
 		<div>{t.earn}</div>
+		<DailyBonusButton value={1000} />
 	</>
 )
 
