@@ -1,7 +1,7 @@
-import { Component } from 'solid-js'
+import { ParentComponent } from 'solid-js'
 
 import css from './Chip.module.scss'
 
-export const Chip: Component = () => (
-	<div class={css.chip} />
+export const Chip: ParentComponent = (props) => (
+	<div class={css.chip}>{props.children}</div>
 )

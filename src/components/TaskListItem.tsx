@@ -17,6 +17,7 @@ export const TaskListItem: Component<Props> = (props) => {
 	return (
 		<Column class={css.container}>
 			<img
+				draggable="false"
 				width="40"
 				height="40"
 				src={props.icon}
@@ -24,6 +25,7 @@ export const TaskListItem: Component<Props> = (props) => {
 			<div class={css.title}>{props.title}</div>
 			<Row>
 				<img
+					draggable="false"
 					width="24"
 					height="24"
 					src={dzIcon}

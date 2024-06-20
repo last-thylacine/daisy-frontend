@@ -20,6 +20,7 @@ export const FarmDrawer: Component<Props> = (props) => {
 	return (
 		<Drawer onClose={props.onClose}>
 			<img
+				draggable="false"
 				width="82.13"
 				height="80"
 				src={farmImage} />

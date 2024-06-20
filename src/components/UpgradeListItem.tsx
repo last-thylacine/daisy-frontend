@@ -18,6 +18,7 @@ export const UpgradeListItem: Component<Props> = (props) => {
 	return (
 		<Row class={css.container}>
 			<img
+				draggable="false"
 				width={props.iconWidth}
 				height={props.iconHeight}
 				src={props.icon}
@@ -31,6 +32,7 @@ export const UpgradeListItem: Component<Props> = (props) => {
 				</div>
 			</div>
 			<img
+				draggable="false"
 				width="24"
 				height="24"
 				src={dzIcon}
@@ -39,6 +41,7 @@ export const UpgradeListItem: Component<Props> = (props) => {
 				{props.cost}
 			</div>
 			<img
+				draggable="false"
 				width="24"
 				height="24"
 				src={chevronRightIcon}

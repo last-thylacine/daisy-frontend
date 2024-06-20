@@ -22,6 +22,7 @@ export const BottomNavigationButton: Component<Props> = (props) => {
 				[css.buttonActive]: props.page === currentTab()
 			}}>
 			<img
+				draggable="false"
 				class={css.icon}
 				src={props.icon}
 			/>

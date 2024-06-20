@@ -16,6 +16,7 @@ export const PageHeader: Component<Props> = (props) => {
 		<Column class={css.container}>
 			{props.icon && (
 				<img
+					draggable="false"
 					class={css.icon}
 					width={props.iconWidth}
 					height={props.iconHeight}

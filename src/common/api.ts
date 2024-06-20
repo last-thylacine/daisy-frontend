@@ -1,7 +1,7 @@
 import WebApp from '@twa-dev/sdk'
 import { INIT_DATA } from './INIT_DATA'
 
-const API_URL = 'https://ae2b249167dfd2.lhr.life/api'
+const API_URL = 'https://2386cd83cc040c.lhr.life/api'
 
 const createInitData = () => {
 	const { initData } = WebApp

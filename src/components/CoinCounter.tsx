@@ -10,6 +10,7 @@ export const CoinCounter: Component = () => {
 	return (
 		<Row class={css.container}>
 			<img
+				draggable="false"
 				width="64"
 				height="64"
 				src={dzFlowerImage}/>

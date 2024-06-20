@@ -17,6 +17,7 @@ export const FarmButton: Component = () => {
 				class={css.button}
 				onClick={() => setActive(true)}>
 				<img
+					draggable="false"
 					width="48"
 					height="46.76"
 					src={farmIcon}

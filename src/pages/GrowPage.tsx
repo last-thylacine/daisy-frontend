@@ -1,15 +1,11 @@
-import { Chip } from "../components/Chip"
+import { TopUI } from "../components/TopUI"
 import { CoinCounter } from "../components/CoinCounter"
 import { Daisy } from "../components/Daisy"
 import { FarmButton } from "../components/FarmButton"
-import { Row } from "../components/Row"
 
 const GrowPage = () => (
 	<>
-		<Row>
-			<Chip />
-			<Chip />
-		</Row>
+		<TopUI />
 		<CoinCounter />
 		<Daisy />
 		<FarmButton />

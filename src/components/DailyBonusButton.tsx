@@ -19,6 +19,7 @@ export const DailyBonusButton: Component<Props> = (props) => {
 	return (
 		<Row class={css.container}>
 			<img
+				draggable="false"
 				width="40"
 				height="40"
 				src={giftIcon}
@@ -27,6 +28,7 @@ export const DailyBonusButton: Component<Props> = (props) => {
 				{t.title}
 			</div>
 			<img
+				draggable="false"
 				width="24"
 				height="24"
 				src={dzIcon}
@@ -35,6 +37,7 @@ export const DailyBonusButton: Component<Props> = (props) => {
 				{`+${fmtNumber(props.value)}`}
 			</div>
 			<img
+				draggable="false"
 				width="24"
 				height="24"
 				src={chevronRightIcon}
