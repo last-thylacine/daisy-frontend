@@ -9,7 +9,7 @@ import css from './TaskListItem.module.scss'
 type Props = {
 	icon: string
 	title: string
-	value: number
+	reward: number
 	subtitle?: string
 }
 
@@ -30,7 +30,7 @@ export const TaskListItem: Component<Props> = (props) => {
 					height="24"
 					src={dzIcon}
 				/>
-				<div class={css.value}>{`+${fmtNumber(props.value)}`}</div>
+				<div class={css.reward}>{`+${fmtNumber(props.reward)}`}</div>
 			</Row>
 			{props.subtitle && (
 				<div class={css.subtitle}>{props.subtitle}</div>

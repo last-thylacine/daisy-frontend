@@ -4,13 +4,13 @@ export const INVITE_TASKS = [
 	{
 		icon: giftIcon,
 		title: "Invite a friend",
-		value: 5000,
+		reward: 5000,
 		subtitle: 'for you and your friend',
 	},
 	{
 		icon: giftIcon,
 		title: "Invite a friend with Telegram Premium",
-		value: 25000,
+		reward: 25000,
 		subtitle: 'for you and your friend',
 	},
 ]

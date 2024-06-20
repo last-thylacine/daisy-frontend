@@ -12,7 +12,7 @@ const t = {
 }
 
 type Props = {
-	value: number
+	reward: number
 }
 
 export const DailyBonusButton: Component<Props> = (props) => {
@@ -34,7 +34,7 @@ export const DailyBonusButton: Component<Props> = (props) => {
 				src={dzIcon}
 			/>
 			<div class={css.chevronLabel}>
-				{`+${fmtNumber(props.value)}`}
+				{`+${fmtNumber(props.reward)}`}
 			</div>
 			<img
 				draggable="false"
