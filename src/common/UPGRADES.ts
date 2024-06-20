@@ -1,14 +1,9 @@
 import flowerIcon from "../assets/flower_40x31.22_3x.png"
 import powerIcon from "../assets/power_40x37.6_3x.png"
 
-const t = {
-	flower: "Multi Flower",
-	power: "Water Power",
-}
-
 export const UPGRADES = [
 	{
-		name: t.flower,
+		name: "Multi Flower",
 		level: 1,
 		cost: 1000,
 		icon: flowerIcon,
@@ -16,7 +11,7 @@ export const UPGRADES = [
 		iconHeight: "31.22",
 	},
 	{
-		name: t.power,
+		name: "Water Power",
 		level: 1,
 		cost: 1000,
 		icon: powerIcon,

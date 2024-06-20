@@ -1,6 +1,6 @@
 import { Component, For } from 'solid-js'
 
-import { UPGRADES } from '../common/fakeData'
+import { UPGRADES } from '../common/UPGRADES'
 import farmImage from "../assets/farm_82.13x80_3x.png"
 import { Drawer } from './Drawer'
 import { UpgradeListItem } from './UpgradeListItem'
