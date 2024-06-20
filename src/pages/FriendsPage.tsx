@@ -1,3 +1,5 @@
+import { PageHeader } from "../components/PageHeader"
+
 const t = {
 	title: "Invite friends!",
 	subtitle: "You and your friend will receive bonuses",
@@ -5,8 +7,9 @@ const t = {
 
 const FriendsPage = () => (
 	<>
-		<div>{t.title}</div>
-		<div>{t.subtitle}</div>
+		<PageHeader
+			title={t.title}
+			subtitle={t.subtitle} />
 	</>
 )
 
