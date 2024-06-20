@@ -10,7 +10,7 @@ import { api } from './api'
 
 const createInitData = () => {
 	const { initData, initDataUnsafe } = WebApp
-	console.log({ initData, initDataUnsafe, WebApp })
+	// console.log({ initData, initDataUnsafe, WebApp })
 	return initData !== "" ? initDataUnsafe : INIT_DATA_UNSAFE
 }
 
@@ -29,12 +29,15 @@ function createApp() {
 			setStore("coins", store.coins + store.coins_per_tap)
 		}
 	}
-	createEffect(() => {
-		console.log({...store.initData.user})
-	})
+	// createEffect(() => {
+	// 	console.log({...store.initData.user})
+	// })
 	createEffect(() => {
 		api.init().then(init => setStore(store => ({ ...store, ...init })))
 	})
+	// createEffect(() => {
+	// 	console.log({ coins: store.coins })
+	// })
 	return { store, tap }
 }
 

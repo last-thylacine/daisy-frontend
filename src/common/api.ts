@@ -1,7 +1,7 @@
 import WebApp from '@twa-dev/sdk'
 import { INIT_DATA } from './INIT_DATA'
 
-const API_URL = 'https://e97ebf99a4d64e.lhr.life/api'
+const API_URL = 'https://ae2b249167dfd2.lhr.life/api'
 
 const createInitData = () => {
 	const { initData } = WebApp
@@ -42,10 +42,10 @@ const init = async () => {
 			body: decodeURIComponent(createInitData()),
 		})
 		const json = await response.json()
-		console.log({ initResponse: json })
+		// console.log({ initResponse: json })
 		result = {
 			coins_per_tap: json.coins_per_tap,
-			balance:       json.player.coins,
+			coins:         json.player.coins,
 			energy:        json.player.energy,
 			max_energy:    json.player.max_energy,
 			energy_level:  json.player.energy_level,
@@ -55,14 +55,14 @@ const init = async () => {
 		console.warn('API error ignored:', e)
 		result = {
 			coins_per_tap:    1,
-			balance:          0,
+			coins:            0,
 			energy:        1000,
 			max_energy:    1000,
 			energy_level:     0,
 			tap_level:        0,
 		}
 	}
-	console.log({ initResult: result })
+	// console.log({ initResult: result })
 	return result
 }
 

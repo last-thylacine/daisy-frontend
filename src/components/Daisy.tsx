@@ -7,6 +7,7 @@ export const Daisy: Component = () => {
 	const { tap } = app
 	return (
 		<img
+			draggable="false"
 			width="280"
 			height="280"
 			onClick={tap}
