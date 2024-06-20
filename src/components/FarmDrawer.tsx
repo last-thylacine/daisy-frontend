@@ -1,6 +1,6 @@
 import { Component, For } from 'solid-js'
 
-import { UPGRADES } from '../common/UPGRADES'
+import { app } from '../common/app'
 import farmImage from "../assets/farm_82.13x80_3x.png"
 import { Drawer } from './Drawer'
 import { UpgradeListItem } from './UpgradeListItem'
@@ -16,6 +16,7 @@ type Props = {
 }
 
 export const FarmDrawer: Component<Props> = (props) => {
+	const { store } = app
 	return (
 		<Drawer onClose={props.onClose}>
 			<img
@@ -24,7 +25,7 @@ export const FarmDrawer: Component<Props> = (props) => {
 				src={farmImage} />
 			<div class={css.title}>{t.title}</div>
 			<div class={css.subtitle}>{t.subtitle}</div>
-			<For each={UPGRADES}>
+			<For each={store.upgrades}>
 				{(upgrade) => <UpgradeListItem {...upgrade} />}
 			</For>
 		</Drawer>

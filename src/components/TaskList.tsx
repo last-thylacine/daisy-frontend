@@ -1,6 +1,6 @@
 import { Component, For } from 'solid-js'
 
-import { TASKS } from '../common/TASKS'
+import { app } from '../common/app'
 import { TaskListItem } from './TaskListItem'
 import css from './TaskList.module.scss'
 
@@ -9,11 +9,12 @@ const t = {
 }
 
 export const TaskList: Component = () => {
+	const { store } = app
 	return (
 		<>
 			<div class={css.label}>{t.label}</div>
 			<div class={css.grid}>
-				<For each={TASKS}>
+				<For each={store.tasks}>
 					{(task) => <TaskListItem {...task} />}
 				</For>
 			</div>

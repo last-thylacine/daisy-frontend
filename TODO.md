@@ -12,3 +12,7 @@
 // onClick -> onMouseDown onTouchStart
 
 // mixins for typography?
+
+// prerender routes
+
+console.log({ max: fmtNumber(Number.MAX_SAFE_INTEGER) })
