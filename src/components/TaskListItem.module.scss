@@ -1,12 +1,11 @@
 @use '../mixins.scss';
 
 .container {
-	width: 114px;
+	// width: 114px;
 	height: 144px;
 	box-sizing: border-box;
 	padding: 12px 8px;
 	border-radius: 24px;
-	margin: 4px;
 	background-color: white;
 	justify-content: space-between;
 }
@@ -32,4 +31,13 @@
 
 	@include mixins.fix600;
 	margin-left: 4px;
+}
+
+.subtitle {
+	font-family: SF Pro Rounded;
+	font-size: 13px;
+	font-weight: 600;
+	line-height: 20px;
+	letter-spacing: 0.5099999904632568px;
+	text-align: center;
 }

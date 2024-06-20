@@ -10,6 +10,7 @@ type Props = {
 	icon: string
 	title: string
 	value: number
+	subtitle: string
 }
 
 export const TaskListItem: Component<Props> = (props) => {
@@ -29,6 +30,9 @@ export const TaskListItem: Component<Props> = (props) => {
 				/>
 				<div class={css.value}>{`+${fmtNumber(props.value)}`}</div>
 			</Row>
+			{props.subtitle && (
+				<div class={css.subtitle}>{props.subtitle}</div>
+			)}
 		</Column>
 	)
 }

@@ -3,6 +3,7 @@ import { createEffect, createRoot } from "solid-js"
 import { createStore } from "solid-js/store"
 import { UPGRADES } from './UPGRADES'
 import { TASKS } from './TASKS'
+import { INVITE_TASKS } from './INVITE_TASKS'
 
 const INITIAL_COIN_BALANCE = 16512372
 const INITIAL_COINS_PER_TAP = 14
@@ -30,6 +31,8 @@ function createApp() {
 		initData: createInitData(),
 		upgrades: UPGRADES,
 		tasks: TASKS,
+		invite_tasks: INVITE_TASKS,
+		friends: [],
 	})
 	const tap = () => setStore("coins", store.coins + store.coins_per_tap)
 	createEffect(() => {
