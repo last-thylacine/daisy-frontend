@@ -10,7 +10,7 @@ type Props = {
 	icon: string
 	title: string
 	value: number
-	subtitle: string
+	subtitle?: string
 }
 
 export const TaskListItem: Component<Props> = (props) => {
