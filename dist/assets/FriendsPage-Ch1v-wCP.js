@@ -1,1 +1,0 @@
-import{P as t}from"./PageHeader-C6uZqJBQ.js";import{c as r}from"./index-BtjARjdX.js";const e={title:"Invite friends!",subtitle:"You and your friend will receive bonuses"},o=()=>r(t,{get title(){return e.title},get subtitle(){return e.subtitle}});export{o as default};

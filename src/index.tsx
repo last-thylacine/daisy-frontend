@@ -18,6 +18,11 @@ WebApp.expand()
 
 eruda.init()
 
+const { initData, initDataUnsafe } = WebApp
+
+console.log({ WebApp })
+console.log({ initData, initDataUnsafe })
+
 render(() => (
 	<Router root={App} base={import.meta.env.BASE_URL}>
 		<Route info={{ tab: '/earn'    }} path={"/earn"}        component={EarnPage} />
