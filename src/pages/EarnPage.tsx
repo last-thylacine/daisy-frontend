@@ -1,6 +1,7 @@
 import { DailyBonusButton } from "../components/DailyBonusButton"
 import dzFlowerImage from "../assets/dz_96x96_3x.png"
 import { PageHeader } from "../components/PageHeader"
+import { TaskList } from "../components/TaskList"
 
 const t = {
 	earn: "Earn more coins",
@@ -14,6 +15,7 @@ const EarnPage = () => (
 			iconHeight="96"
 			title={t.earn} />
 		<DailyBonusButton value={1000} />
+		<TaskList />
 	</>
 )
 

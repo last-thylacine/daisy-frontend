@@ -1,1 +1,0 @@
-import{s as r,i as a,t as e}from"./index-BedN37ki.js";const s="/daisy-frontend/assets/dz_96x96_3x-CmS92ggb.png";var n=e("<img width=96 height=96>"),i=e("<div>");const o={earn:"Earn more coins"},d=()=>[(()=>{var t=n();return r(t,"src",s),t})(),(()=>{var t=i();return a(t,()=>o.earn),t})()];export{d as default};

@@ -1,12 +1,17 @@
+import tgIcon from "../assets/task_tg_40x40_3x.png"
+import igIcon from "../assets/task_ig_40x40_3x.png"
+import xIcon from "../assets/task_x_40x40_3x.png"
+import friendsIcon from "../assets/task_friends_40x40_3x.png"
+
 export const TASKS = [
 	{
 		icon: tgIcon,
-		title: "Join our TG chat",
-		value: 5000,
+		title: "Join our TG channel",
+		value: 100000,
 	},
 	{
-		icon: igIcon,
-		title: "Follow our Instagram",
+		icon: tgIcon,
+		title: "Join our TG chat",
 		value: 5000,
 	},
 	{
@@ -15,13 +20,13 @@ export const TASKS = [
 		value: 5000,
 	},
 	{
+		icon: igIcon,
+		title: "Follow our Instagram",
+		value: 5000,
+	},
+	{
 		icon: friendsIcon,
 		title: "Invite 3 friends",
 		value: 100000,
-	},
-	{
-		icon: tgIcon,
-		title: "Join our TG channel",
-		value: 5000,
 	},
 ]

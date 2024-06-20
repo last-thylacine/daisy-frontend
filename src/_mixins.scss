@@ -1,8 +1,12 @@
+/* workaround:
+	700 usually maps to bold,
+	but for some reason browser maps
+	600 to SFProRounded-Bold
+	700 to SFProRounded-Heavy */
 @mixin fix700 {
-	/* workaround:
-		700 usually maps to bold,
-		but for some reason browser maps
-		600 to SFProRounded-Bold
-		700 to SFProRounded-Heavy */
 	font-weight: 600;
+}
+
+@mixin fix600 {
+	font-weight: 500;
 }
