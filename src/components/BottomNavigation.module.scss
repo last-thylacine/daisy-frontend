@@ -1,6 +1,7 @@
 .container {
 	// figma
-	width: 358px;
+	width: 100%;
+	max-width: var(--main-ui-max-width);
 	height: 64px;
 	border-radius: 40px;
 	padding: 4px 5px;
@@ -9,7 +10,7 @@
 	// custom
 	background-color: var(--main-green-color);
 	justify-content: space-evenly;
-	position: absolute;
+	position: fixed;
 	bottom: 31px;
     left: 50%;
     transform: translate(-50%, 0);

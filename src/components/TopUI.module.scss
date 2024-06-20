@@ -1,6 +1,12 @@
 @use '../mixins.scss';
+// @include mixins.fix600;
+// @include mixins.fix700;
 
-.foo {
-	@include mixins.fix600;
-	@include mixins.fix700;
+.container {
+	align-self: center;
+	width: 100%;
+	max-width: var(--main-ui-max-width);
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 8px;
 }

@@ -9,7 +9,7 @@ import css from './TopUI.module.scss'
 export const TopUI: Component = () => {
 	const { store } = app
 	return (
-		<Row>
+		<Row class={css.container}>
 			<Chip>
 				<Row>
 					<img
