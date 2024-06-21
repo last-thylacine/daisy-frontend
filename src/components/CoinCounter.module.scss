@@ -3,7 +3,7 @@
 .container {
 	z-index: 2;
 	position: absolute;
-	top: mixins.betweenVH(90px, 125px, 520px, 722px);
+	top: mixins.betweenVH(100px, 125px, 600px, 722px);
 	// top: 125px;
     left: 50%;
     transform: translate(-50%, 0);
