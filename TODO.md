@@ -24,3 +24,8 @@ console.log({ max: fmtNumber(Number.MAX_SAFE_INTEGER) })
 // localstorage
 // multiclicks
 // disable swipe -> close
+
+mobile:
+zoom (double click)
+selection
+fonts
