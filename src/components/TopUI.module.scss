@@ -10,3 +10,27 @@
 	grid-template-columns: 1fr 1fr;
 	gap: 8px;
 }
+
+.row {
+	align-self: stretch;
+	justify-content: space-between;
+	margin-bottom: 4px;
+}
+
+.energy, .username {
+	font-family: SF Pro Rounded;
+	font-size: 13px;
+	font-weight: 700;
+	line-height: 15.51px;
+	letter-spacing: 0.4000000059604645px;
+	text-align: left;
+
+	@include mixins.fix700;
+}
+
+.avatar {
+	background-color: var(--main-background-color);
+	width: 24px;
+	height: 24px;
+	border-radius: 100px;
+}
