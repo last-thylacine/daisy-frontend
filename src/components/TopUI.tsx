@@ -1,4 +1,4 @@
-import { Component, Show, createEffect } from 'solid-js'
+import { Component, Show } from 'solid-js'
 
 import { app } from '../common/app'
 import energyIcon from '../assets/energy_19.02x24.png'
@@ -10,9 +10,6 @@ import css from './TopUI.module.scss'
 export const TopUI: Component = () => {
 	const { store } = app
 	const loaded = () => store.energy !== null && store.max_energy !== null
-	createEffect(() => {
-		console.log({loaded: loaded()})
-	})
 	return (
 		<Row class={css.container}>
 			<Chip>

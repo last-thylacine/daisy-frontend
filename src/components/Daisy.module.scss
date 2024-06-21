@@ -12,3 +12,24 @@
     left: 50%;
     transform: translate(-50%, 0);
 }
+
+@keyframes float-and-fade {
+	to {
+		opacity: 0;
+		transform: translate(0, -150px);
+	}
+}
+
+.particle {
+	pointer-events: none;
+	animation-name: float-and-fade;
+	animation-duration: 600ms;
+	animation-fill-mode: forwards;
+}
+
+.particle-text {
+	font-family: SF Pro Rounded;
+	font-size: 32px;
+	font-weight: 600;
+    transform: translate(-50%, -50%);
+}
