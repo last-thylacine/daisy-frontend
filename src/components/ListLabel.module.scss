@@ -1,5 +1,11 @@
 @use '../mixins.scss';
 
+.container {
+	align-self: stretch;
+	justify-content: space-between;
+	margin: 16px 0 4px 0;
+}
+
 .label {
 	// figma
 	font-family: SF Pro Rounded;
@@ -11,6 +17,5 @@
 
 	// custom
 	@include mixins.fix700;
-	margin: 16px 0 4px 0;
 	align-self: flex-start;
 }

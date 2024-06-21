@@ -67,21 +67,21 @@ button:focus-visible {
 	}
 }
 
-/* CUSTOM STYLES */
+// CUSTOM STYLES
 
 :root {
-	/* the color from figma is identical to devtools highlight color, so i change it */
-	/* switch to "true" in production (yeah, manually) */
+	// the color from figma is identical to devtools highlight color, so i change it
+	// switch to "true" in production (yeah, manually)
 	--true-main-background-color: #8CCEEA;
 	--fixed-main-background-color: #97C1E6;
-	/* --main-background-color: var(--true-main-background-color); */
-	--main-background-color: var(--fixed-main-background-color);
+	--main-background-color: var(--true-main-background-color);
+	// --main-background-color: var(--fixed-main-background-color);
 	--main-overlay-color: rgba(140, 206, 234, 0.6);
 
 	--main-text-color: #363636;
 	--main-green-color: #D0F050;
+	--main-blue-color: rgb(40, 168, 234);
 	--main-upgrade-background-color: rgb(172, 228, 252);
-	--main-link-color: rgb(40, 168, 234);
 	--main-ui-max-width: 358px;
 
 	background-color: var(--main-background-color);

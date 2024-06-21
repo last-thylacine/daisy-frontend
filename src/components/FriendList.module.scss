@@ -1,5 +1,22 @@
 @use '../mixins.scss';
 
-// .label {
-// 	@include mixins.fix700;
-// }
+.list {
+	align-self: stretch;
+}
+
+.empty {
+	font-family: SF Pro Rounded;
+	font-size: 15px;
+	font-weight: 700;
+	line-height: 20px;
+	letter-spacing: 0.4399999976158142px;
+	text-align: center;
+
+	@include mixins.fix700;
+	padding: 30px 12px;
+	border-radius: 24px;
+	align-self: stretch;
+	opacity: 0.5;
+	background-color: white;
+	color: rgba(54, 54, 54, 1);
+}

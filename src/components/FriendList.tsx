@@ -7,6 +7,7 @@ import css from './FriendList.module.scss'
 
 const t = {
 	label: "List of your friends",
+	empty: "You haven’t invited anyone yet",
 }
 
 export const FriendList: Component = () => {
@@ -15,7 +16,9 @@ export const FriendList: Component = () => {
 		<>
 			<ListLabel>{t.label}</ListLabel>
 			<div class={css.list}>
-				<For each={store.friends}>
+				<For
+					each={store.friends}
+					fallback={<div class={css.empty}>{t.empty}</div>}>
 					{(_friend) => <FriendListItem />}
 				</For>
 			</div>
