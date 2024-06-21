@@ -1,5 +1,6 @@
 import { ParentComponent, JSX, splitProps } from 'solid-js'
 
+import closeIcon from '../assets/close.svg'
 import { Column } from './Column'
 import css from './Drawer.module.scss'
 
@@ -23,6 +24,14 @@ export const Drawer: ParentComponent<Props> = (props) => {
 					...(local.classList ?? {}),
 				}}
 			>
+				<img
+					onClick={() => local.onClose()}
+					class={css.closeIcon}
+					draggable="false"
+					width="28"
+					height="28"
+					src={closeIcon}
+				/>
 				{local.children}
 			</Column>
 		</div>

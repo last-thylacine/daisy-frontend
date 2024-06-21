@@ -15,7 +15,14 @@
 }
 
 .drawer {
+	position: relative;
 	border-radius: 48px 48px 0 0;
 	background-color: white;
 	padding: 24px 16px 32px 16px;
+}
+
+.closeIcon {
+	position: absolute;
+	top: 24px;
+	right: 24px;
 }
