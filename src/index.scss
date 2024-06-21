@@ -89,8 +89,8 @@ button:focus-visible {
 }
 
 html, body, #root {
-	height: 100vh;
-	width: 100vw;
+	min-height: 100vh;
+	width: 100%;
 }
 
 body {
@@ -105,6 +105,7 @@ body {
 	// max-width: 390px;
 	// max-height: 722px;
 	position: relative;
-	padding: 16px 16px 32px 16px;
+	/* 112 = 32 (margin-bottom) + 64 (navbar) + 16 (margin-top) */
+	padding: 16px 16px 112px 16px;
 	box-sizing: border-box;
 }
