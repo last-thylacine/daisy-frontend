@@ -12,9 +12,10 @@ const t = {
 
 export const FriendList: Component = () => {
 	const { store } = app
+	const refresh = () => {}
 	return (
 		<>
-			<ListLabel>{t.label}</ListLabel>
+			<ListLabel refresh={refresh}>{t.label}</ListLabel>
 			<div class={css.list}>
 				<For
 					each={store.friends}

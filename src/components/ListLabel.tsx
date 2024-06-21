@@ -1,4 +1,4 @@
-import { ParentComponent } from 'solid-js'
+import { ParentComponent, Show } from 'solid-js'
 
 import refreshIcon from '../assets/refresh.svg'
 import { Row } from './Row'
@@ -14,12 +14,14 @@ export const ListLabel: ParentComponent<Props> = (props) => {
 			<div class={css.label}>
 				{props.children}
 			</div>
-			<img
-				draggable="false"
-				width="24"
-				height="24"
-				src={refreshIcon}
-			/>
+			<Show when={props.refresh}>
+				<img
+					draggable="false"
+					width="24"
+					height="24"
+					src={refreshIcon}
+				/>
+			</Show>
 		</Row>
 	)
 }
