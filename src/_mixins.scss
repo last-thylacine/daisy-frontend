@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 /* workaround:
 	700 usually maps to bold,
 	but for some reason browser maps
@@ -9,4 +11,18 @@
 
 @mixin fix600 {
 	font-weight: 500;
+}
+
+// https://css-tricks.com/between-the-lines/
+
+@function betweenVW($from, $to, $fromW, $toW) {
+	$slope: math.div($to - $from, $toW - $fromW);
+	$base: $from - $slope * $fromW;
+	@return calc(#{$base} + #{100vw * $slope});
+}
+
+@function betweenVH($from, $to, $fromH, $toH) {
+	$slope: math.div($to - $from, $toH - $fromH);
+	$base: $from - $slope * $fromH;
+	@return calc(#{$base} + #{100vh * $slope});
 }

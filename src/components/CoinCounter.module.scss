@@ -1,7 +1,12 @@
 @use '../mixins.scss';
 
 .container {
-	margin: 53px 0 58px 0;
+	z-index: 2;
+	position: absolute;
+	top: mixins.betweenVH(90px, 125px, 520px, 722px);
+	// top: 125px;
+    left: 50%;
+    transform: translate(-50%, 0);
 }
 
 .text {

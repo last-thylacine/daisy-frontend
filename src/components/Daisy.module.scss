@@ -1,0 +1,14 @@
+@use '../mixins.scss';
+
+.daisy {
+	position: absolute;
+
+	// 280px x 280px image
+	// 250px from top at 722px view height
+	top: mixins.betweenVH(125px, 250px, 520px, 722px);
+	// top: 34.626038781%;
+	// top: 250px;
+
+    left: 50%;
+    transform: translate(-50%, 0);
+}
