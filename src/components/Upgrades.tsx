@@ -1,7 +1,7 @@
 import { Component, For } from 'solid-js'
 
 import { app } from '../common/app'
-import farmImage from "../assets/farm_82.13x80_3x.png"
+import farmImage from "../assets/images/farm_82.13x80_3x.png"
 import { UpgradeListItem } from './UpgradeListItem'
 import css from './Upgrades.module.scss'
 

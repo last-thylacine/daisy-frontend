@@ -1,5 +1,5 @@
 import { DailyBonusButton } from "../components/DailyBonusButton"
-import dzFlowerImage from "../assets/dz_96x96_3x.png"
+import dzFlowerImage from "../assets/images/dz_96x96_3x.png"
 import { PageHeader } from "../components/PageHeader"
 import { TaskList } from "../components/TaskList"
 

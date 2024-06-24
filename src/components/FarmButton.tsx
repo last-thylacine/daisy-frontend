@@ -1,7 +1,7 @@
 import { useMatch, useNavigate } from '@solidjs/router'
 import { Component, Show } from 'solid-js'
 
-import farmIcon from "../assets/farm_48x46.76_3x.png"
+import farmIcon from "../assets/images/farm_48x46.76_3x.png"
 import { Column } from './Column'
 import { FarmDrawer } from './FarmDrawer'
 import { UpgradeDrawer } from './UpgradeDrawer'

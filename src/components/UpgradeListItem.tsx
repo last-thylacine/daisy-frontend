@@ -2,8 +2,8 @@ import { useNavigate } from '@solidjs/router'
 import { Component } from 'solid-js'
 
 import { app } from '../common/app'
-import dzIcon from "../assets/dz_24x24_3x.png"
-import chevronRightIcon from "../assets/chevron_right_24.svg"
+import dzIcon from "../assets/images/dz_24x24_3x.png"
+import chevronRightIcon from "../assets/images/chevron_right_24.svg"
 import css from './UpgradeListItem.module.scss'
 import { Row } from './Row'
 

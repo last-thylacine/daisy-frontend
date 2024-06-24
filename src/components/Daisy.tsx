@@ -1,7 +1,7 @@
 import { Component } from 'solid-js'
 
 import { app } from "../common/app"
-import flowerImage from "../assets/flower.svg"
+import flowerImage from "../assets/images/flower.svg"
 import css from './Daisy.module.scss'
 
 const createParticle = (left: number, top: number, value: number) => {

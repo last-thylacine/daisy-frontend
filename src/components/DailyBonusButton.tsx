@@ -1,9 +1,9 @@
 import { Component } from 'solid-js'
 
 import { fmtNumber } from '../common/fmtNumber'
-import chevronRightIcon from "../assets/chevron_right_24.svg"
-import dzIcon from "../assets/dz_24x24_3x.png"
-import giftIcon from "../assets/gift.svg"
+import chevronRightIcon from "../assets/images/chevron_right_24.svg"
+import dzIcon from "../assets/images/dz_24x24_3x.png"
+import giftIcon from "../assets/images/gift.svg"
 import { Row } from './Row'
 import css from './DailyBonusButton.module.scss'
 

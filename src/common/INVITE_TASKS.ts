@@ -1,4 +1,4 @@
-import giftIcon from "../assets/gift.svg"
+import giftIcon from "../assets/images/gift.svg"
 
 export const INVITE_TASKS = [
 	{

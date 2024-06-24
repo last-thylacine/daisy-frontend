@@ -2,7 +2,7 @@ import { useNavigate } from '@solidjs/router'
 import { Component } from 'solid-js'
 
 import { app } from '../common/app'
-import coinIcon from "../assets/dz_32x32_3x.png"
+import coinIcon from "../assets/images/dz_32x32_3x.png"
 import { Drawer } from './Drawer'
 import css from './UpgradeDrawer.module.scss'
 import { Row } from './Row'

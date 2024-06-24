@@ -1,6 +1,6 @@
 import { Component, For } from 'solid-js'
 
-import copyIcon from '../assets/copy.svg'
+import copyIcon from '../assets/images/copy.svg'
 import { app } from '../common/app'
 import { TaskListItem } from './TaskListItem'
 import { Row } from './Row'

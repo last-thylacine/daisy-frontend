@@ -1,6 +1,6 @@
 import { ParentComponent, Show } from 'solid-js'
 
-import refreshIcon from '../assets/refresh.svg'
+import refreshIcon from '../assets/images/refresh.svg'
 import { Row } from './Row'
 import css from './ListLabel.module.scss'
 

@@ -1,7 +1,7 @@
 import { Component, Show } from 'solid-js'
 
 import { app } from '../common/app'
-import energyIcon from '../assets/energy_19.02x24.png'
+import energyIcon from '../assets/images/energy_19.02x24.png'
 import { Chip } from './Chip'
 import { Row } from './Row'
 import { ProgressBar } from './ProgressBar'

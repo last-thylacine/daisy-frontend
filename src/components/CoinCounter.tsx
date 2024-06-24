@@ -1,7 +1,7 @@
 import { Component } from 'solid-js'
 
 import { useCoins } from '../hooks/useCoins'
-import dzFlowerImage from "../assets/dz_64x64_3x.png"
+import dzFlowerImage from "../assets/images/dz_64x64_3x.png"
 import { Row } from './Row'
 import css from './CoinCounter.module.scss'
 

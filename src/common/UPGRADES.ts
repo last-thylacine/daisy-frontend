@@ -1,7 +1,7 @@
-import flowerIcon from "../assets/flower_40x31.22_3x.png"
-import flowerImage from "../assets/multi_flower_108.48x80_3x.png"
-import powerIcon from "../assets/power_40x37.6_3x.png"
-import powerImage from "../assets/water_power_85.25x80_3x.png"
+import flowerIcon from "../assets/images/flower_40x31.22_3x.png"
+import flowerImage from "../assets/images/multi_flower_108.48x80_3x.png"
+import powerIcon from "../assets/images/power_40x37.6_3x.png"
+import powerImage from "../assets/images/water_power_85.25x80_3x.png"
 
 export const UPGRADES = [
 	{

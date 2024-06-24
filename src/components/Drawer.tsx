@@ -1,6 +1,6 @@
 import { ParentComponent, JSX, splitProps } from 'solid-js'
 
-import closeIcon from '../assets/close.svg'
+import closeIcon from '../assets/images/close.svg'
 import { Column } from './Column'
 import css from './Drawer.module.scss'
 

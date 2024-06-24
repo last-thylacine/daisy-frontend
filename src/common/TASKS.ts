@@ -1,7 +1,7 @@
-import tgIcon from "../assets/task_tg_40x40_3x.png"
-import igIcon from "../assets/task_ig_40x40_3x.png"
-import xIcon from "../assets/task_x_40x40_3x.png"
-import friendsIcon from "../assets/task_friends_40x40_3x.png"
+import tgIcon from "../assets/images/task_tg_40x40_3x.png"
+import igIcon from "../assets/images/task_ig_40x40_3x.png"
+import xIcon from "../assets/images/task_x_40x40_3x.png"
+import friendsIcon from "../assets/images/task_friends_40x40_3x.png"
 
 export const TASKS = [
 	{

@@ -1,7 +1,7 @@
 import { Component } from 'solid-js'
 
 import { fmtNumber } from '../common/fmtNumber'
-import dzIcon from "../assets/dz_24x24_3x.png"
+import dzIcon from "../assets/images/dz_24x24_3x.png"
 import { Row } from './Row'
 import { Column } from './Column'
 import css from './TaskListItem.module.scss'

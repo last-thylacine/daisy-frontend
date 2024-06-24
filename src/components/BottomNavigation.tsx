@@ -1,8 +1,8 @@
 import { Component } from 'solid-js'
 
-import coinsIcon from "../assets/pepicons-print_coins.svg"
-import flowerBudIcon from "../assets/pepicons-print_flower-bud.svg"
-import personsIcon from "../assets/pepicons-print_persons.svg"
+import coinsIcon from "../assets/images/pepicons-print_coins.svg"
+import flowerBudIcon from "../assets/images/pepicons-print_flower-bud.svg"
+import personsIcon from "../assets/images/pepicons-print_persons.svg"
 import { BottomNavigationButton } from "./BottomNavigationButton"
 import { Row } from "./Row"
 import css from './BottomNavigation.module.scss'
