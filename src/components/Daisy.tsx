@@ -1,4 +1,4 @@
-import { Component, JSX } from 'solid-js'
+import { Component } from 'solid-js'
 
 import { app } from "../common/app"
 import flowerImage from "../assets/flower.svg"
@@ -23,9 +23,24 @@ const createParticle = (left: number, top: number, value: number) => {
 
 export const Daisy: Component = () => {
 	const { store, tap } = app
-	const handleClick: JSX.EventHandlerUnion<HTMLImageElement, MouseEvent> = (e) => {
+	const handleMouseUp = (e: MouseEvent & {
+		currentTarget: HTMLImageElement;
+		target: Element;
+	}) => {
 		if (store.coins_per_tap) {
 			createParticle(e.clientX, e.clientY, store.coins_per_tap)
+			tap()
+		}
+	}
+	const handleTouchEnd = (e: TouchEvent & {
+		currentTarget: HTMLImageElement;
+		target: Element;
+	}) => {
+		e.preventDefault()
+		if (store.coins_per_tap) {
+			for (const touch of e.changedTouches) {
+				createParticle(touch.clientX, touch.clientY, store.coins_per_tap)
+			}
 			tap()
 		}
 	}
@@ -35,7 +50,8 @@ export const Daisy: Component = () => {
 			draggable="false"
 			width="280"
 			height="280"
-			onClick={handleClick}
+			onMouseUp={handleMouseUp}
+			onTouchEnd={handleTouchEnd}
 			src={flowerImage}
 		/>
 	)
