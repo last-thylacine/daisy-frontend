@@ -1,6 +1,4 @@
 @use '../mixins.scss';
-// @include mixins.fix600;
-// @include mixins.fix700;
 
 .container {
 	align-self: center;
@@ -24,8 +22,6 @@
 	line-height: 15.51px;
 	letter-spacing: 0.4000000059604645px;
 	text-align: left;
-
-	@include mixins.fix700;
 }
 
 .avatar {

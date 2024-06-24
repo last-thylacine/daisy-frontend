@@ -17,8 +17,6 @@
 	line-height: 20px;
 	letter-spacing: 0.4399999976158142px;
 	text-align: center;
-
-	@include mixins.fix700;
 }
 
 .reward {
@@ -29,7 +27,6 @@
 	letter-spacing: 0.5099999904632568px;
 	text-align: left;
 
-	@include mixins.fix600;
 	margin-left: 4px;
 }
 

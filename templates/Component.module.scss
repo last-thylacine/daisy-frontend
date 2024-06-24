@@ -1,6 +1,1 @@
 @use '../mixins.scss';
-
-.foo {
-	@include mixins.fix600;
-	@include mixins.fix700;
-}

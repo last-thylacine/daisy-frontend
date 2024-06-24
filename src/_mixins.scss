@@ -1,18 +1,5 @@
 @use 'sass:math';
 
-/* workaround:
-	700 usually maps to bold,
-	but for some reason browser maps
-	600 to SFProRounded-Bold
-	700 to SFProRounded-Heavy */
-@mixin fix700 {
-	font-weight: 600;
-}
-
-@mixin fix600 {
-	font-weight: 500;
-}
-
 // https://css-tricks.com/between-the-lines/
 
 @function betweenVW($from, $to, $fromW, $toW) {
