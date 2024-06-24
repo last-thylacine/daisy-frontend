@@ -13,6 +13,17 @@ const createInitData = () => {
 	return initData !== "" ? initDataUnsafe : INIT_DATA_UNSAFE
 }
 
+
+// // controlled by client
+// coins_delta: 0,
+
+// // controlled by server
+// coins: null as number | null,
+
+// // derived value
+// // coins_display = coins + coins_delta
+// coins_display: null as number | null,
+
 function createApp() {
 	const [store, setStore] = createStore({
 		coins: null as number | null,

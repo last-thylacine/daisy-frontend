@@ -1,33 +1,35 @@
+import { useNavigate } from '@solidjs/router'
 import { Component } from 'solid-js'
 
-// import { app } from '../common/app'
-// import farmImage from "../assets/farm_82.13x80_3x.png"
+import { app } from '../common/app'
 import { Drawer } from './Drawer'
-// import { UpgradeListItem } from './UpgradeListItem'
-// import css from './UpgradeDrawer.module.scss'
-
-// const t = {
-// 	confirm: "Go ahead",
-// }
+import css from './UpgradeDrawer.module.scss'
 
 type Props = {
-	onClose: () => void
+	id: string
 }
 
 export const UpgradeDrawer: Component<Props> = (props) => {
-	// const { store } = app
+	const { store } = app
+	const data = () => store.upgrades.find(({id}) => id === props.id)!
+	const navigate = useNavigate()
 	return (
-		<Drawer onClose={props.onClose}>
-			{/* <img
+		<Drawer onClose={() => navigate("/grow/farm/")}>
+			<img
 				draggable="false"
-				width="82.13"
-				height="80"
-				src={farmImage} />
-			<div class={css.title}>{t.title}</div>
-			<div class={css.subtitle}>{t.subtitle}</div>
-			<For each={store.upgrades}>
-				{(upgrade) => <UpgradeListItem {...upgrade} />}
-			</For> */}
+				width={data().imageWidth}
+				height={data().imageHeight}
+				src={data().image}
+			/>
+			<div class={css.title}>
+				{data().title}
+			</div>
+			<div class={css.description}>
+				{data().description}
+			</div>
+			<div class={css.effect}>
+				{data().effect}
+			</div>
 		</Drawer>
 	)
 }

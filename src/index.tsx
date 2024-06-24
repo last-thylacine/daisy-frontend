@@ -21,7 +21,7 @@ WebApp.expand()
 render(() => (
 	<Router root={App} base={import.meta.env.BASE_URL}>
 		<Route info={{ tab: '/earn'    }} path={"/earn"}        component={EarnPage} />
-		<Route info={{ tab: '/grow'    }} path={["/", "/grow"]} component={GrowPage} />
+		<Route info={{ tab: '/grow'    }} path={["/", "/grow/*"]} component={GrowPage} />
 		<Route info={{ tab: '/friends' }} path={"/friends"}     component={FriendsPage} />
 	</Router>
 ), document.getElementById('root')!)

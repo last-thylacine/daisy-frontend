@@ -1,8 +1,10 @@
-import { Component, createSignal } from 'solid-js'
+import { useMatch, useNavigate } from '@solidjs/router'
+import { Component, Show } from 'solid-js'
 
 import farmIcon from "../assets/farm_48x46.76_3x.png"
 import { Column } from './Column'
 import { FarmDrawer } from './FarmDrawer'
+import { UpgradeDrawer } from './UpgradeDrawer'
 import css from './FarmButton.module.scss'
 
 const t = {
@@ -10,12 +12,15 @@ const t = {
 }
 
 export const FarmButton: Component = () => {
-	const [active, setActive] = createSignal(false)
+	const navigate = useNavigate()
+	const openDrawer = () => navigate('/grow/farm')
+	const farm = useMatch(() => `${import.meta.env.BASE_URL}/grow/farm`)
+	const upgrade = useMatch(() => `${import.meta.env.BASE_URL}/grow/farm/:upgrade`)
 	return (
 		<>
 			<Column
 				class={css.button}
-				onClick={() => setActive(true)}>
+				onClick={openDrawer}>
 				<img
 					draggable="false"
 					width="48"
@@ -26,7 +31,12 @@ export const FarmButton: Component = () => {
 					{t.label}
 				</div>
 			</Column>
-			{active() && <FarmDrawer onClose={() => setActive(false)} />}
+			<Show when={Boolean(farm())}>
+				<FarmDrawer />
+			</Show>
+			<Show when={Boolean(upgrade())}>
+				<UpgradeDrawer id={upgrade()!.params.upgrade!} />
+			</Show>
 		</>
 	)
 }

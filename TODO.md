@@ -29,3 +29,5 @@ mobile:
 zoom (double click)
 selection
 fonts
+
+preload pages

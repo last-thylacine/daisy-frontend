@@ -1,34 +1,15 @@
-import { Component, For } from 'solid-js'
+import { useNavigate } from '@solidjs/router'
+import { Component } from 'solid-js'
 
-import { app } from '../common/app'
-import farmImage from "../assets/farm_82.13x80_3x.png"
 import { Drawer } from './Drawer'
-import { UpgradeListItem } from './UpgradeListItem'
-import css from './FarmDrawer.module.scss'
+import { Upgrades } from './Upgrades'
 
-const t = {
-	title: 'Farm',
-	subtitle: 'How a farm works',
-}
-
-type Props = {
-	onClose: () => void
-}
-
-export const FarmDrawer: Component<Props> = (props) => {
-	const { store } = app
+export const FarmDrawer: Component = () => {
+	const navigate = useNavigate()
+	const closeDrawer = () => navigate('/grow')
 	return (
-		<Drawer onClose={props.onClose}>
-			<img
-				draggable="false"
-				width="82.13"
-				height="80"
-				src={farmImage} />
-			<div class={css.title}>{t.title}</div>
-			<div class={css.subtitle}>{t.subtitle}</div>
-			<For each={store.upgrades}>
-				{(upgrade) => <UpgradeListItem {...upgrade} />}
-			</For>
+		<Drawer onClose={closeDrawer}>
+			<Upgrades />
 		</Drawer>
 	)
 }

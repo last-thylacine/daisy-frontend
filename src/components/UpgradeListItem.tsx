@@ -1,34 +1,37 @@
+import { useNavigate } from '@solidjs/router'
 import { Component } from 'solid-js'
 
+import { app } from '../common/app'
 import dzIcon from "../assets/dz_24x24_3x.png"
 import chevronRightIcon from "../assets/chevron_right_24.svg"
 import css from './UpgradeListItem.module.scss'
 import { Row } from './Row'
 
 type Props = {
-	name: string
-	level: number
-	cost: number
-	icon: string
-	iconWidth: string
-	iconHeight: string
+	id: string
 }
 
 export const UpgradeListItem: Component<Props> = (props) => {
+	const { store } = app
+	const data = () => store.upgrades.find(({id}) => id === props.id)!
+	const navigate = useNavigate()
 	return (
-		<Row class={css.container}>
+		<Row
+			class={css.container}
+			onClick={() => navigate(`/grow/farm/${data().id}`)}
+			>
 			<img
 				draggable="false"
-				width={props.iconWidth}
-				height={props.iconHeight}
-				src={props.icon}
+				width={data().iconWidth}
+				height={data().iconHeight}
+				src={data().icon}
 			/>
 			<div class={css.textContainer}>
 				<div class={css.title}>
-					{props.name}
+					{data().title}
 				</div>
 				<div class={css.subtitle}>
-					{props.level} lvl
+					{data().level} lvl
 				</div>
 			</div>
 			<img
@@ -38,7 +41,7 @@ export const UpgradeListItem: Component<Props> = (props) => {
 				src={dzIcon}
 			/>
 			<div class={css.chevronLabel}>
-				{props.cost}
+				{data().cost}
 			</div>
 			<img
 				draggable="false"
