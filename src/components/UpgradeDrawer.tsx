@@ -13,6 +13,14 @@ export const UpgradeDrawer: Component<Props> = (props) => {
 	const { store } = app
 	const data = () => store.upgrades.find(({id}) => id === props.id)!
 	const navigate = useNavigate()
+	const level = () => {
+		if (props.id === "multi_flower") {
+			return store.multi_flower
+		}
+		if (props.id === "water_power") {
+			return store.water_power
+		}
+	}
 	return (
 		<Drawer onClose={() => navigate("/grow/farm/")}>
 			<img
@@ -28,7 +36,7 @@ export const UpgradeDrawer: Component<Props> = (props) => {
 				{data().description}
 			</div>
 			<div class={css.effect}>
-				{data().effect}
+				{data().effect.replace('{{level}}', String(level()))}
 			</div>
 		</Drawer>
 	)

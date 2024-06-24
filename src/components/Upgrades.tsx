@@ -22,7 +22,7 @@ export const Upgrades: Component = () => {
 			<div class={css.title}>{t.title}</div>
 			<div class={css.subtitle}>{t.subtitle}</div>
 			<For each={store.upgrades}>
-				{(upgrade) => <UpgradeListItem {...upgrade} />}
+				{(upgrade) => <UpgradeListItem id={upgrade.id} />}
 			</For>
 		</>
 	)

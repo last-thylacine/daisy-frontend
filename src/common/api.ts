@@ -48,8 +48,8 @@ const init = async () => {
 			coins:         json.player.coins,
 			energy:        json.player.energy,
 			max_energy:    json.player.max_energy,
-			energy_level:  json.player.energy_level,
-			tap_level:     json.player.tap_level,
+			multi_flower:  json.player.tap_level,
+			water_power:   json.player.energy_level,
 		}
 	} catch (e) {
 		console.warn('API error ignored:', e)
@@ -58,8 +58,8 @@ const init = async () => {
 			coins:            0,
 			energy:        1000,
 			max_energy:    1000,
-			energy_level:     0,
-			tap_level:        0,
+			multi_flower:     1,
+			water_power:      1,
 		}
 	}
 	// console.log({ initResult: result })

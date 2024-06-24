@@ -14,6 +14,14 @@ type Props = {
 export const UpgradeListItem: Component<Props> = (props) => {
 	const { store } = app
 	const data = () => store.upgrades.find(({id}) => id === props.id)!
+	const level = () => {
+		if (props.id === "multi_flower") {
+			return store.multi_flower
+		}
+		if (props.id === "water_power") {
+			return store.water_power
+		}
+	}
 	const navigate = useNavigate()
 	return (
 		<Row
@@ -31,7 +39,7 @@ export const UpgradeListItem: Component<Props> = (props) => {
 					{data().title}
 				</div>
 				<div class={css.subtitle}>
-					{data().level} lvl
+					{level()} lvl
 				</div>
 			</div>
 			<img
@@ -41,7 +49,7 @@ export const UpgradeListItem: Component<Props> = (props) => {
 				src={dzIcon}
 			/>
 			<div class={css.chevronLabel}>
-				{data().cost}
+				{data().cost(level()!)}
 			</div>
 			<img
 				draggable="false"
