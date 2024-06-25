@@ -9,7 +9,8 @@ import css from './TopUI.module.scss'
 
 export const TopUI: Component = () => {
 	const { store } = app
-	const loaded = () => store.energy !== null && store.max_energy !== null
+	const loaded = () => store.energy !== null && store.water_power !== null
+	const max_energy = () => 500 * (1 + store.water_power!)
 	return (
 		<Row class={css.container}>
 			<Chip>
@@ -22,13 +23,13 @@ export const TopUI: Component = () => {
 							src={energyIcon}
 						/>
 						<div class={css.energy}>
-							{store.energy}/{store.max_energy}
+							{store.energy}/{max_energy()}
 						</div>
 					</Row>
 					<ProgressBar
 						min={0}
 						value={store.energy!}
-						max={store.max_energy!}
+						max={max_energy()}
 						variant='blue' />
 				</Show>
 			</Chip>

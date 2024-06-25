@@ -44,22 +44,22 @@ const init = async () => {
 		const json = await response.json()
 		// console.log({ initResponse: json })
 		result = {
-			coins_per_tap: json.coins_per_tap,
+			// coins_per_tap: json.coins_per_tap,
 			coins:         json.player.coins,
 			energy:        json.player.energy,
-			max_energy:    json.player.max_energy,
+			// max_energy:    json.player.max_energy,
 			multi_flower:  json.player.tap_level,
 			water_power:   json.player.energy_level,
 		}
 	} catch (e) {
 		console.warn('API error ignored:', e)
 		result = {
-			coins_per_tap:    1,
-			coins:            0,
-			energy:        1000,
-			max_energy:    1000,
-			multi_flower:     1,
-			water_power:      1,
+			// coins_per_tap:      1,
+			coins:         340999,
+			energy:          1000,
+			// max_energy:      1000,
+			multi_flower:       1,
+			water_power:        1,
 		}
 	}
 	// console.log({ initResult: result })

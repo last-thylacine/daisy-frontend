@@ -16,7 +16,7 @@ type Props = {
 }
 
 export const UpgradeDrawer: Component<Props> = (props) => {
-	const { store } = app
+	const { store, setStore } = app
 	const data = () => store.upgrades.find(({id}) => id === props.id)!
 	const navigate = useNavigate()
 	const level = () => {
@@ -27,8 +27,21 @@ export const UpgradeDrawer: Component<Props> = (props) => {
 			return store.water_power
 		}
 	}
+	const close = () => navigate("/grow/farm/")
+	const handleSubmit = () => {
+		if (props.id === "multi_flower" && store.multi_flower !== null && store.coins !== null) {
+			setStore("coins", coins => coins! - data().cost(level()!))
+			setStore("multi_flower", multi_flower => multi_flower! + 1)
+			close()
+		}
+		if (props.id === "water_power" && store.water_power !== null && store.coins !== null) {
+			setStore("coins", coins => coins! - data().cost(level()!))
+			setStore("water_power", water_power => water_power! + 1)
+			close()
+		}
+	}
 	return (
-		<Drawer onClose={() => navigate("/grow/farm/")}>
+		<Drawer onClose={close}>
 			<img
 				draggable="false"
 				width={data().imageWidth}
@@ -58,7 +71,9 @@ export const UpgradeDrawer: Component<Props> = (props) => {
 					{level()! + 1} lvl
 				</div>
 			</Row>
-			<div class={css.button}>
+			<div
+				onClick={handleSubmit}
+				class={css.button}>
 				{t.submit}
 			</div>
 		</Drawer>

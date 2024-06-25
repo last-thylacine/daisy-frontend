@@ -27,9 +27,9 @@ const createInitData = () => {
 function createApp() {
 	const [store, setStore] = createStore({
 		coins: null as number | null,
-		coins_per_tap: null as number | null,
+		// coins_per_tap: null as number | null,
 		energy: null as number | null,
-		max_energy: null as number | null,
+		// max_energy: null as number | null,
 		multi_flower: null as number | null,
 		water_power: null as number | null,
 		initData: createInitData(),
@@ -39,14 +39,14 @@ function createApp() {
 		friends: [],
 	})
 	const tap = () => {
-		if (store.coins != null && store.coins_per_tap != null) {
-			setStore("coins", store.coins + store.coins_per_tap)
+		if (store.coins != null && store.multi_flower != null) {
+			setStore("coins", store.coins + store.multi_flower)
 		}
 	}
 	createEffect(() => {
 		api.init().then(init => setStore(store => ({ ...store, ...init })))
 	})
-	return { store, tap }
+	return { store, setStore, tap }
 }
 
 export const app = createRoot(createApp)

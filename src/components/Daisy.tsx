@@ -27,8 +27,8 @@ export const Daisy: Component = () => {
 		currentTarget: HTMLImageElement;
 		target: Element;
 	}) => {
-		if (store.coins_per_tap) {
-			createParticle(e.clientX, e.clientY, store.coins_per_tap)
+		if (store.multi_flower) {
+			createParticle(e.clientX, e.clientY, store.multi_flower)
 			tap()
 		}
 	}
@@ -37,9 +37,9 @@ export const Daisy: Component = () => {
 		target: Element;
 	}) => {
 		e.preventDefault()
-		if (store.coins_per_tap) {
+		if (store.multi_flower) {
 			for (const touch of e.changedTouches) {
-				createParticle(touch.clientX, touch.clientY, store.coins_per_tap)
+				createParticle(touch.clientX, touch.clientY, store.multi_flower)
 			}
 			tap()
 		}
