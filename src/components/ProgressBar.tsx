@@ -13,7 +13,7 @@ export const ProgressBar: Component<Props> = (props) => {
 	const progress = () => {
 		const total_distance = props.max - props.min
 		const distance_covered = props.value - props.min
-		return Math.floor(distance_covered / total_distance)
+		return Math.floor(100 * distance_covered / total_distance)
 	}
 	return (
 		<div classList={{
