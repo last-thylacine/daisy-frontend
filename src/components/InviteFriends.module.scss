@@ -4,16 +4,7 @@
 	display: grid;
 	gap: 8px;
 	grid-template-columns: 1fr 1fr;
-}
-
-.buttonRow {
-	align-self: stretch;
-	margin-top: 8px;
-}
-
-.primaryButton {
-	margin-right: 8px;
-	flex-grow: 1;
+	margin-bottom: 8px;
 }
 
 .terms {

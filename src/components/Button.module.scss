@@ -1,5 +1,9 @@
 @use '../mixins.scss';
 
+.buttonRow {
+	align-self: stretch;
+}
+
 .button {
 	font-family: SF Pro Rounded;
 	font-size: 17px;
@@ -12,4 +16,9 @@
 	border-radius: 40px;
 	background-color: var(--main-blue-color);
 	color: white;
+	flex-grow: 1;
+}
+
+.copyIcon {
+	margin-left: 8px;
 }

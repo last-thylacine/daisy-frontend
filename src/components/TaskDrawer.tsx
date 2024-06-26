@@ -24,7 +24,7 @@ export const TaskDrawer: Component<Props> = (props) => {
 			<div class={css.title}>
 				{data().title}
 			</div>
-			<Button></Button>
+			<Button>{data().ui.primary.text}</Button>
 		</Drawer>
 	)
 }
