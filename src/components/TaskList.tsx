@@ -15,8 +15,8 @@ export const TaskList: Component = () => {
 	const { store } = app
 	const navigate = useNavigate()
 	const openTask = (id?: string) => {
-		if (id) navigate(`/earn/task/${id}`)
-		else navigate('/earn')
+		if (id) navigate(`/earn/task/${id}`, { scroll: false })
+		else navigate('/earn', { scroll: false })
 	}
 	const task = useMatch(() => `${import.meta.env.BASE_URL}/earn/task/:task_id`)
 	return (
