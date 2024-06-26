@@ -15,7 +15,7 @@ export const FarmButton: Component = () => {
 	const navigate = useNavigate()
 	const openDrawer = () => navigate('/grow/farm')
 	const farm = useMatch(() => `${import.meta.env.BASE_URL}/grow/farm`)
-	const upgrade = useMatch(() => `${import.meta.env.BASE_URL}/grow/farm/:upgrade`)
+	const upgrade = useMatch(() => `${import.meta.env.BASE_URL}/grow/farm/:upgrade_id`)
 	return (
 		<>
 			<Column
@@ -35,7 +35,7 @@ export const FarmButton: Component = () => {
 				<FarmDrawer />
 			</Show>
 			<Show when={Boolean(upgrade())}>
-				<UpgradeDrawer id={upgrade()!.params.upgrade!} />
+				<UpgradeDrawer id={upgrade()!.params.upgrade_id!} />
 			</Show>
 		</>
 	)
