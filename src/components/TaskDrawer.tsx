@@ -1,9 +1,12 @@
 import { Component } from 'solid-js'
 
 import { app } from '../common/app'
+import { fmtNumber } from '../common/fmtNumber'
+import coinIcon from '../assets/images/dz_32x32_3x.png'
 import { Drawer } from './Drawer'
-import css from './TaskDrawer.module.scss'
 import { Button } from './Button'
+import { Row } from './Row'
+import css from './TaskDrawer.module.scss'
 
 type Props = {
 	id: string
@@ -24,7 +27,23 @@ export const TaskDrawer: Component<Props> = (props) => {
 			<div class={css.title}>
 				{data().title}
 			</div>
-			<Button>{data().ui.primary.text}</Button>
+			<Row>
+				<img
+					draggable="false"
+					width="32"
+					height="32"
+					src={coinIcon}
+				/>
+				<div class={css.reward}>
+					{`+${fmtNumber(data().reward)}`}
+				</div>
+				<div class={css.secondaryButton}>
+					{data().ui.secondary.text}
+				</div>
+			</Row>
+			<Button class={css.primaryButton}>
+				{data().ui.primary.text}
+			</Button>
 		</Drawer>
 	)
 }
