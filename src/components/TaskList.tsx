@@ -2,6 +2,7 @@ import { Component, For } from 'solid-js'
 
 import { app } from '../common/app'
 import { ListLabel } from './ListLabel'
+// import { TaskDrawer } from './TaskDrawer'
 import { TaskListItem } from './TaskListItem'
 import css from './TaskList.module.scss'
 
@@ -19,6 +20,7 @@ export const TaskList: Component = () => {
 					{(task) => <TaskListItem {...task} />}
 				</For>
 			</div>
+			{/* <TaskDrawer /> */}
 		</>
 	)
 }

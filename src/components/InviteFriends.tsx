@@ -2,6 +2,7 @@ import { Component, For } from 'solid-js'
 
 import copyIcon from '../assets/images/copy.svg'
 import { app } from '../common/app'
+import { Button } from './Button'
 import { TaskListItem } from './TaskListItem'
 import { Row } from './Row'
 import css from './InviteFriends.module.scss'
@@ -21,9 +22,9 @@ export const InviteFriends: Component = () => {
 				</For>
 			</div>
 			<Row class={css.buttonRow}>
-				<div class={css.primaryButton}>
+				<Button class={css.primaryButton}>
 					{t.invite}
-				</div>
+				</Button>
 				<img
 					draggable="false"
 					width="50"
