@@ -23,7 +23,7 @@ export const Button: Component<Props> = (props) => {
 			<Show when={local.onCopyClick}>
 				<img
 					class={css.copyIcon}
-					onClick={local.onCopyClick}
+					onClick={() => local.onCopyClick?.()}
 					draggable="false"
 					width="50"
 					height="50"
