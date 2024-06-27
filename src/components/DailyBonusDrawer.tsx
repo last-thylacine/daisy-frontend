@@ -3,6 +3,7 @@ import { Component, For } from 'solid-js'
 import { DAILY_BONUS } from '../common/DAILY_BONUS'
 import giftIcon from '../assets/images/gift.svg'
 import { Button } from './Button'
+import { DailyBonusListItem } from './DailyBonusListItem'
 import { Drawer } from './Drawer'
 import css from './DailyBonusDrawer.module.scss'
 
@@ -31,11 +32,13 @@ export const DailyBonusDrawer: Component<Props> = (props) => {
 			<div class={css.subtitle}>
 				{t.subtitle}
 			</div>
-			<For each={DAILY_BONUS}>
-				{(daily_bonus) => (
-					<div>{daily_bonus.reward_fmt}</div>
-				)}
-			</For>
+			<div class={css.grid}>
+				<For each={DAILY_BONUS.rewards}>
+					{(_daily_bonus, i) => (
+						<DailyBonusListItem i={i()} />
+					)}
+				</For>
+			</div>
 			<Button disabled>{t.tomorrow}</Button>
 		</Drawer>
 	)
