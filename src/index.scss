@@ -102,6 +102,9 @@ button:focus-visible {
 	--main-text-color: #363636;
 	--main-green-color: #D0F050;
 	--main-blue-color: rgb(40, 168, 234);
+	// https://borderleft.com/toolbox/rgba/
+	// rgb(180,225,248) = rgba(40,168,234,0.35) on top of rgb(255,255,255)
+	--main-cloudy-blue-color: rgb(180,225,248);
 	--main-upgrade-background-color: rgb(172, 228, 252);
 	--main-ui-max-width: 358px;
 
