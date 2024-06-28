@@ -13,7 +13,6 @@ const createInitData = () => {
 	return initData !== "" ? initDataUnsafe : INIT_DATA_UNSAFE
 }
 
-
 // // controlled by client
 // coins_delta: 0,
 
