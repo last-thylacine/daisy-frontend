@@ -1,6 +1,7 @@
-import { Component, Show } from 'solid-js'
+import { Component, Show, createSignal } from 'solid-js'
 
 import { app } from '../common/app'
+import { SERVER_URL } from '../common/api'
 import { useTimeToRegen } from '../hooks/useTimeToRegen'
 import energyIcon from '../assets/images/energy_19.02x24.png'
 import { Chip } from './Chip'
@@ -13,6 +14,7 @@ export const TopUI: Component = () => {
 	const loaded = () => store.energy !== null && store.water_power !== null
 	const max_energy = () => 500 * (1 + store.water_power!)
 	const timeToRegen = useTimeToRegen()
+	const [showAvatar, setShowAvatar] = createSignal(true)
 	return (
 		<Row class={css.container}>
 			<Chip>
@@ -41,7 +43,16 @@ export const TopUI: Component = () => {
 				<Show when={loaded()}>
 					<Row class={css.row}>
 						<div class={css.username}>{store.initData.user?.username}</div>
-						<div class={css.avatar} />
+						<Show when={showAvatar()}>
+							<img
+								class={css.avatar}
+								draggable="false"
+								width="24"
+								height="24"
+								src={`${SERVER_URL}/i/${store.initData.user?.id}`}
+								onError={() => setShowAvatar(false)}
+							/>
+						</Show>
 					</Row>
 					<ProgressBar
 						min={0}

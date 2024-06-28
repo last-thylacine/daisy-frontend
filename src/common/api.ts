@@ -1,7 +1,8 @@
 import WebApp from '@twa-dev/sdk'
 import { INIT_DATA } from './INIT_DATA'
 
-const API_URL = 'https://dirtnmeat.dev/api'
+export const SERVER_URL = 'https://dirtnmeat.dev'
+const API_URL = `${SERVER_URL}/api`
 
 const createInitData = () => {
 	const { initData } = WebApp
