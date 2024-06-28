@@ -2,10 +2,11 @@ import { useNavigate } from '@solidjs/router'
 import { Component } from 'solid-js'
 
 import { app } from '../common/app'
+import { fmtNumber } from '../common/fmtNumber'
 import dzIcon from "../assets/images/dz_24x24_3x.png"
 import chevronRightIcon from "../assets/images/chevron_right_24.svg"
-import css from './UpgradeListItem.module.scss'
 import { Row } from './Row'
+import css from './UpgradeListItem.module.scss'
 
 type Props = {
 	id: string
@@ -49,7 +50,7 @@ export const UpgradeListItem: Component<Props> = (props) => {
 				src={dzIcon}
 			/>
 			<div class={css.chevronLabel}>
-				{data().cost(level()!)}
+				{fmtNumber(data().cost(level()!))}
 			</div>
 			<img
 				draggable="false"

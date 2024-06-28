@@ -1,6 +1,7 @@
 import { Component, Show } from 'solid-js'
 
 import { app } from '../common/app'
+import { useTimeToRegen } from '../hooks/useTimeToRegen'
 import energyIcon from '../assets/images/energy_19.02x24.png'
 import { Chip } from './Chip'
 import { Row } from './Row'
@@ -11,6 +12,7 @@ export const TopUI: Component = () => {
 	const { store } = app
 	const loaded = () => store.energy !== null && store.water_power !== null
 	const max_energy = () => 500 * (1 + store.water_power!)
+	const timeToRegen = useTimeToRegen()
 	return (
 		<Row class={css.container}>
 			<Chip>
@@ -31,7 +33,7 @@ export const TopUI: Component = () => {
 						value={store.energy!}
 						max={max_energy()}
 						variant='blue'>
-						{'2h'}
+						{timeToRegen()}
 					</ProgressBar>
 				</Show>
 			</Chip>
