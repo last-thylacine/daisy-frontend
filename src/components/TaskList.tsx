@@ -1,7 +1,7 @@
 import { useMatch, useNavigate } from '@solidjs/router'
 import { Component, For, Show } from 'solid-js'
 
-import { app } from '../common/app'
+import { TASKS } from '../common/TASKS'
 import { ListLabel } from './ListLabel'
 import { TaskDrawer } from './TaskDrawer'
 import { TaskListItem } from './TaskListItem'
@@ -12,7 +12,6 @@ const t = {
 }
 
 export const TaskList: Component = () => {
-	const { store } = app
 	const navigate = useNavigate()
 	const openTask = (id?: string) => {
 		if (id) navigate(`/earn/task/${id}`, { scroll: false })
@@ -23,10 +22,10 @@ export const TaskList: Component = () => {
 		<>
 			<ListLabel>{t.label}</ListLabel>
 			<div class={css.grid}>
-				<For each={store.tasks}>
+				<For each={TASKS}>
 					{(task) => (
 						<TaskListItem
-							{...task}
+							id={task.id}
 							onClick={[openTask, task.id]}
 						/>
 					)}

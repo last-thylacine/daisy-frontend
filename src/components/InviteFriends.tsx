@@ -1,8 +1,7 @@
-import { Component, For } from 'solid-js'
+import { Component } from 'solid-js'
 
-import { app } from '../common/app'
 import { Button } from './Button'
-import { TaskListItem } from './TaskListItem'
+import { InviteTaskListItem } from './InviteTaskListItem'
 import css from './InviteFriends.module.scss'
 
 const t = {
@@ -11,14 +10,12 @@ const t = {
 }
 
 export const InviteFriends: Component = () => {
-	const { store } = app
 	const copy = () => {}
 	return (
 		<>
 			<div class={css.tasks}>
-				<For each={store.invite_tasks}>
-					{(task) => <TaskListItem {...task} />}
-				</For>
+				<InviteTaskListItem id="0" />
+				<InviteTaskListItem id="1" />
 			</div>
 			<Button onCopyClick={copy}>
 				{t.invite}

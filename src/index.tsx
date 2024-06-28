@@ -1,16 +1,19 @@
 /* @refresh reload */
-import { lazy } from "solid-js"
+// import { lazy } from "solid-js"
 import { render } from 'solid-js/web'
 import { Router, Route } from "@solidjs/router"
 import WebApp from '@twa-dev/sdk'
 // import eruda from 'eruda'
 
 import { App } from "./components/App"
+import EarnPage from "./pages/EarnPage"
+import GrowPage from "./pages/GrowPage"
+import FriendsPage from "./pages/FriendsPage"
 import './index.scss'
 
-const EarnPage = lazy(() => import("./pages/EarnPage"))
-const GrowPage = lazy(() => import("./pages/GrowPage"))
-const FriendsPage = lazy(() => import("./pages/FriendsPage"))
+// const EarnPage = lazy(() => import("./pages/EarnPage"))
+// const GrowPage = lazy(() => import("./pages/GrowPage"))
+// const FriendsPage = lazy(() => import("./pages/FriendsPage"))
 
 // the only usage of tg api:
 WebApp.ready()

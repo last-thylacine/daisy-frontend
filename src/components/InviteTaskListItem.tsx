@@ -1,19 +1,19 @@
 import { Component, JSX } from 'solid-js'
 
-import { TASKS } from '../common/TASKS'
+import { INVITE_TASKS } from '../common/INVITE_TASKS'
 import { fmtNumber } from '../common/fmtNumber'
 import dzIcon from "../assets/images/dz_24x24_3x.png"
 import { Row } from './Row'
 import { Column } from './Column'
-import css from './TaskListItem.module.scss'
+import css from './InviteTaskListItem.module.scss'
 
 type Props = {
 	id: string
 	onClick?: JSX.HTMLAttributes<HTMLDivElement>["onClick"]
 }
 
-export const TaskListItem: Component<Props> = (props) => {
-	const data = () => TASKS.find(({id}) => id === props.id)!
+export const InviteTaskListItem: Component<Props> = (props) => {
+	const data = () => INVITE_TASKS.find(({id}) => id === props.id)!
 	return (
 		<Column
 			onClick={props.onClick}
@@ -24,9 +24,9 @@ export const TaskListItem: Component<Props> = (props) => {
 				height="40"
 				src={data().icon}
 			/>
-			<div class={css.title}>
+			<Row class={css.title}>
 				{data().title}
-			</div>
+			</Row>
 			<Row>
 				<img
 					draggable="false"
@@ -38,6 +38,9 @@ export const TaskListItem: Component<Props> = (props) => {
 					{`+${fmtNumber(data().reward)}`}
 				</div>
 			</Row>
+			<div class={css.subtitle}>
+				{data().subtitle}
+			</div>
 		</Column>
 	)
 }
