@@ -2,7 +2,7 @@
 
 ## Install dependencies
 ```bash
-npm i --legacy-peer-deps
+npm i
 ```
 
 ## Launch dev environment
