@@ -30,7 +30,9 @@ export const TopUI: Component = () => {
 						min={0}
 						value={store.energy!}
 						max={max_energy()}
-						variant='blue' />
+						variant='blue'>
+						{'2h'}
+					</ProgressBar>
 				</Show>
 			</Chip>
 			<Chip>
@@ -40,10 +42,12 @@ export const TopUI: Component = () => {
 						<div class={css.avatar} />
 					</Row>
 					<ProgressBar
-						min={1}
-						value={1}
-						max={12}
-						variant='yellow' />
+						min={0}
+						value={0}
+						max={100}
+						variant='yellow'>
+						{'lvl 1/12'}
+					</ProgressBar>
 				</Show>
 			</Chip>
 		</Row>

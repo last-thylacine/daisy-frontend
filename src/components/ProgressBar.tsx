@@ -1,4 +1,4 @@
-import { Component } from 'solid-js'
+import { ParentComponent, Show } from 'solid-js'
 
 import css from './ProgressBar.module.scss'
 
@@ -9,7 +9,7 @@ type Props = {
 	variant: "blue" | "yellow"
 }
 
-export const ProgressBar: Component<Props> = (props) => {
+export const ProgressBar: ParentComponent<Props> = (props) => {
 	const progress = () => {
 		const total_distance = props.max - props.min
 		const distance_covered = props.value - props.min
@@ -24,6 +24,9 @@ export const ProgressBar: Component<Props> = (props) => {
 				[css.progress]: true,
 				[css[props.variant]]: true,
 			}}/>
+			<Show when={props.children}>
+				<div class={css.children}>{props.children}</div>
+			</Show>
 		</div>
 	)
 }

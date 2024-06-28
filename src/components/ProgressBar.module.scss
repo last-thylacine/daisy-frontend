@@ -8,6 +8,7 @@
 
 .bar {
 	align-self: stretch;
+	position: relative;
 
 	&.blue {
 		background: radial-gradient(123.08% 113.51% at 30.34% 50%, rgba(190, 237, 253, 0.4) 18.5%, rgba(132, 217, 252, 0.4) 61.5%, rgba(111, 193, 255, 0.4) 76.55%);
@@ -27,4 +28,20 @@
 	&.yellow {
 		background: radial-gradient(103.11% 95.1% at 50.31% 50%, #FFE896 18.5%, #FCD384 49.5%, #FFC56F 76.55%);
 	}
+}
+
+.children {
+	font-family: SF Pro Rounded;
+	font-size: 10px;
+	font-weight: 600;
+	line-height: 20px;
+	letter-spacing: 0.5699999928474426px;
+	text-align: right;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding-right: 9px;
+	box-sizing: border-box;
 }
