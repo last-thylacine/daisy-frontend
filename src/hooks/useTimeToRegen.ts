@@ -6,7 +6,7 @@ export const useTimeToRegen = () => {
 	const timeToRegen = () => {
 		if (store.energy === null) return ""
 		const max_energy = 500 * (1 + store.water_power!)
-		const valueToRegen = max_energy - store.energy!
+		const valueToRegen = max_energy - store.energy
 		if (valueToRegen <= ENERGY.regeneration) return ""
 		// e / (e/s) = s
 		const seconds = Math.ceil(valueToRegen / ENERGY.regeneration)

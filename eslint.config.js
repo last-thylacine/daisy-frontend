@@ -5,7 +5,12 @@ import solidjs from 'eslint-plugin-solid'
 
 export default [
 	{
-		languageOptions: { globals: globals.browser },
+		languageOptions: {
+			globals: globals.browser,
+			parserOptions: {
+				project: ["tsconfig.json"],
+			},
+		},
 		rules: {
 			"@typescript-eslint/no-unused-vars": [
 				"error",
@@ -23,6 +28,7 @@ export default [
 	},
 	eslint.configs.recommended,
 	...ts_eslint.configs.recommended,
+	// ...ts_eslint.configs.recommendedTypeChecked,
 	solidjs.configs['flat/recommended'],
 	solidjs.configs['flat/typescript'],
 ]

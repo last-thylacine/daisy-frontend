@@ -35,7 +35,7 @@ export const FarmButton: Component = () => {
 				<FarmDrawer />
 			</Show>
 			<Show when={Boolean(upgrade())}>
-				<UpgradeDrawer id={upgrade()!.params.upgrade_id!} />
+				<UpgradeDrawer id={upgrade()!.params.upgrade_id} />
 			</Show>
 		</>
 	)

@@ -33,7 +33,7 @@ export const TaskList: Component = () => {
 			</div>
 			<Show when={Boolean(task())}>
 				<TaskDrawer
-					id={task()!.params.task_id!}
+					id={task()!.params.task_id}
 					onClose={openTask}
 				/>
 			</Show>
