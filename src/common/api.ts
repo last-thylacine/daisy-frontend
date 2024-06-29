@@ -89,7 +89,29 @@ const task_start = async (task_id: string) => {
 	return result
 }
 
+const task_check = async (task_id: string) => {
+	let result
+	try {
+		result = await post('/tasks/check', { task_id })
+	} catch (e) {
+		ignore(e)
+	}
+	console.log('task_start', result)
+	return result
+}
+
+const task_claim = async (task_id: string) => {
+	let result
+	try {
+		result = await post('/tasks/claim', { task_id })
+	} catch (e) {
+		ignore(e)
+	}
+	console.log('task_start', result)
+	return result
+}
+
 export const api = {
 	init,
-	task_start,
+	task_start, task_check, task_claim,
 }
