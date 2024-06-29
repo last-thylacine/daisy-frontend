@@ -9,6 +9,24 @@ const createInitData = () => {
 	return initData || INIT_DATA
 }
 
+const post = async (path: string, body: any) => {
+	const response = await fetch(`${API_URL}${path}`, {
+		method: "POST",
+		body: JSON.stringify(body),
+	})
+	const json = await response.json()
+	return json
+}
+
+const post_uri = async (path: string, body: string) => {
+	const response = await fetch(`${API_URL}${path}`, {
+		method: "POST",
+		body: decodeURIComponent(body),
+	})
+	const json = await response.json()
+	return json
+}
+
 // {
 // 	"user": {
 // 		"id": 5,
@@ -38,33 +56,36 @@ const createInitData = () => {
 const init = async () => {
 	let result
 	try {
-		const response = await fetch(`${API_URL}/users/init`, {
-			method: "POST",
-			body: decodeURIComponent(createInitData()),
-		})
-		const json = await response.json()
-		// console.log({ initResponse: json })
+		const json = await post_uri('/users/init', createInitData())
 		result = {
-			// coins_per_tap: json.coins_per_tap,
 			coins:         json.player.coins,
 			energy:        json.player.energy,
-			// max_energy:    json.player.max_energy,
 			multi_flower:  json.player.tap_level,
 			water_power:   json.player.energy_level,
 		}
 	} catch (e) {
 		console.warn('API error ignored:', e)
 		result = {
-			// coins_per_tap:      1,
 			coins:         340999,
 			energy:          1000,
-			// max_energy:      1000,
 			multi_flower:       1,
 			water_power:        1,
 		}
 	}
-	// console.log({ initResult: result })
 	return result
 }
 
-export const api = { init }
+const task_start = async (task_id: string) => {
+	let result
+	try {
+		result = await post('/tasks/start', { task_id })
+	} catch (e) {
+		console.warn('API error ignored:', e)
+	}
+	return result
+}
+
+export const api = {
+	init,
+	task_start,
+}

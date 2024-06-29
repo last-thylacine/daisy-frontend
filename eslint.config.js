@@ -11,6 +11,13 @@ export default [
 				project: ["tsconfig.json"],
 			},
 		},
+	},
+	eslint.configs.recommended,
+	...ts_eslint.configs.recommended,
+	// ...ts_eslint.configs.recommendedTypeChecked,
+	solidjs.configs['flat/recommended'],
+	solidjs.configs['flat/typescript'],
+	{
 		rules: {
 			"@typescript-eslint/no-unused-vars": [
 				"error",
@@ -24,11 +31,7 @@ export default [
 					"ignoreRestSiblings": true,
 				},
 			],
+			"@typescript-eslint/no-explicit-any": "off",
 		},
-	},
-	eslint.configs.recommended,
-	...ts_eslint.configs.recommended,
-	// ...ts_eslint.configs.recommendedTypeChecked,
-	solidjs.configs['flat/recommended'],
-	solidjs.configs['flat/typescript'],
+	}
 ]
