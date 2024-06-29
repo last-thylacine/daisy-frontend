@@ -9,15 +9,16 @@ const createInitData = () => {
 	return initData || INIT_DATA
 }
 
-// const get = async (path: string) => {
-// 	const response = await fetch(`${API_URL}${path}`)
-// 	const json = await response.json()
-// 	return json
-// }
+const get = async (path: string) => {
+	const response = await fetch(`${API_URL}${path}`)
+	const json = await response.json()
+	return json
+}
 
-const post = async (path: string, body: any) => {
+const post = async (path: string, body?: any) => {
 	const response = await fetch(`${API_URL}${path}`, {
 		method: "POST",
+		...(body ? { body } : {}),
 		body: JSON.stringify(body),
 	})
 	const json = await response.json()
@@ -128,8 +129,43 @@ const upgrade_buy = async (upgrade_id: string, upgrade_to_level: number) => {
 	return result
 }
 
+const task_getall = async () => {
+	let result
+	try {
+		result = await get('/tasks/')
+	} catch (e) {
+		ignore(e)
+	}
+	console.log('task_getall', result)
+	return result
+}
+
+const dailybonus_use = async () => {
+	let result
+	try {
+		result = await post('/daily-bonus/use')
+	} catch (e) {
+		ignore(e)
+	}
+	console.log('dailybonus_use', result)
+	return result
+}
+
+const friends_getall = async () => {
+	let result
+	try {
+		result = await get('/frens')
+	} catch (e) {
+		ignore(e)
+	}
+	console.log('friends_getall', result)
+	return result
+}
+
 export const api = {
 	init,
-	task_start, task_check, task_claim,
+	task_getall, task_start, task_check, task_claim,
+	dailybonus_use,
 	upgrade_buy,
+	friends_getall,
 }
