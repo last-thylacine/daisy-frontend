@@ -27,6 +27,8 @@ const post_uri = async (path: string, body: string) => {
 	return json
 }
 
+const ignore = (e: any) => console.warn('API error ignored:', e)
+
 // {
 // 	"user": {
 // 		"id": 5,
@@ -64,7 +66,7 @@ const init = async () => {
 			water_power:   json.player.energy_level,
 		}
 	} catch (e) {
-		console.warn('API error ignored:', e)
+		ignore(e)
 		result = {
 			coins:         340999,
 			energy:          1000,
@@ -72,6 +74,7 @@ const init = async () => {
 			water_power:        1,
 		}
 	}
+	console.log('init', result)
 	return result
 }
 
@@ -80,8 +83,9 @@ const task_start = async (task_id: string) => {
 	try {
 		result = await post('/tasks/start', { task_id })
 	} catch (e) {
-		console.warn('API error ignored:', e)
+		ignore(e)
 	}
+	console.log('task_start', result)
 	return result
 }
 
