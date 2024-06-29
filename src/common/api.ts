@@ -9,6 +9,12 @@ const createInitData = () => {
 	return initData || INIT_DATA
 }
 
+// const get = async (path: string) => {
+// 	const response = await fetch(`${API_URL}${path}`)
+// 	const json = await response.json()
+// 	return json
+// }
+
 const post = async (path: string, body: any) => {
 	const response = await fetch(`${API_URL}${path}`, {
 		method: "POST",
@@ -96,7 +102,7 @@ const task_check = async (task_id: string) => {
 	} catch (e) {
 		ignore(e)
 	}
-	console.log('task_start', result)
+	console.log('task_check', result)
 	return result
 }
 
@@ -107,11 +113,23 @@ const task_claim = async (task_id: string) => {
 	} catch (e) {
 		ignore(e)
 	}
-	console.log('task_start', result)
+	console.log('task_claim', result)
+	return result
+}
+
+const upgrade_buy = async (upgrade_id: string, upgrade_to_level: number) => {
+	let result
+	try {
+		result = await post('/upgrades/buy', { upgrade_id, upgrade_to_level })
+	} catch (e) {
+		ignore(e)
+	}
+	console.log('upgrade_buy', result)
 	return result
 }
 
 export const api = {
 	init,
 	task_start, task_check, task_claim,
+	upgrade_buy,
 }
