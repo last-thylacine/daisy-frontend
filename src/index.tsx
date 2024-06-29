@@ -3,7 +3,6 @@
 import { render } from 'solid-js/web'
 import { Router, Route } from "@solidjs/router"
 import WebApp from '@twa-dev/sdk'
-import eruda from 'eruda'
 
 import { App } from "./components/App"
 import EarnPage from "./pages/EarnPage"
@@ -18,8 +17,6 @@ import './index.scss'
 // the only usage of tg api:
 WebApp.ready()
 WebApp.expand()
-
-eruda.init()
 
 render(() => (
 	<Router root={App} base={import.meta.env.BASE_URL}>
