@@ -8,6 +8,7 @@ import { UPGRADES } from './UPGRADES'
 import { TASKS } from './TASKS'
 import { INVITE_TASKS } from './INVITE_TASKS'
 import { INIT_DATA_UNSAFE } from './INIT_DATA'
+import { ENERGY } from './ENERGY'
 
 const createInitData = () => {
 	const { initData, initDataUnsafe } = WebApp
@@ -65,6 +66,16 @@ function createApp() {
 			ws.init()
 		})
 	})
+	const regen = () => {
+		if (store.energy !== null && store.water_power !== null) {
+			setStore(
+				produce((state) => {
+					state.energy = Math.min(state.energy! + ENERGY.regeneration, 500 * (1 + store.water_power!))
+				})
+			)
+		}
+	}
+	setInterval(regen, 1000)
 	return {
 		store,
 		setStore,
