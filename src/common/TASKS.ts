@@ -2,7 +2,7 @@ import tgIcon from "../assets/images/task_tg_40x40_3x.png"
 import igIcon from "../assets/images/task_ig_40x40_3x.png"
 import xIcon from "../assets/images/task_x_40x40_3x.png"
 import friendsIcon from "../assets/images/task_friends_40x40_3x.png"
-import { INVITE } from "./INVITE"
+import { LINKS } from "./LINKS"
 
 export const TASKS = [
 	{
@@ -17,11 +17,11 @@ export const TASKS = [
 			},
 			secondary: {
 				text: "Join",
-				url: "https://t.me/tbilisiton",
+				url: LINKS.tg_channel,
 			},
 			primary_final: {
 				text: "Open TG channel",
-				url: "https://t.me/tbilisiton",
+				url: LINKS.tg_channel,
 			}
 		},
 	},
@@ -37,11 +37,11 @@ export const TASKS = [
 			},
 			secondary: {
 				text: "Join",
-				url: "https://t.me/ton_breakfast",
+				url: LINKS.tg_chat,
 			},
 			primary_final: {
 				text: "Open TG chat",
-				url: "https://t.me/ton_breakfast",
+				url: LINKS.tg_chat,
 			}
 		},
 	},
@@ -57,11 +57,11 @@ export const TASKS = [
 			},
 			secondary: {
 				text: "Follow",
-				url: "https://x.com/elonmusk",
+				url: LINKS.x,
 			},
 			primary_final: {
 				text: "Open X account",
-				url: "https://x.com/elonmusk",
+				url: LINKS.x,
 			}
 		},
 	},
@@ -77,11 +77,11 @@ export const TASKS = [
 			},
 			secondary: {
 				text: "Follow",
-				url: "https://www.instagram.com/beeple_crap/",
+				url: LINKS.instagram,
 			},
 			primary_final: {
 				text: "Open Instagram account",
-				url: "https://www.instagram.com/beeple_crap/",
+				url: LINKS.instagram,
 			}
 		},
 	},
@@ -93,17 +93,17 @@ export const TASKS = [
 		ui: {
 			primary: {
 				text: "Invite friends",
-				url: INVITE.url,
+				url: LINKS.tg_invite,
 			},
 			secondary: {
 				icon: "COPY",
-				url: "https://t.me/BlumCryptoBot/app?startapp=ref_tvX1UKYY9k",
+				url: LINKS.tg_ref,
 				action: "COPY",
 			},
 			primary_final: {
 				icon: "COPY",
 				text: "Invite more friends",
-				url: "https://t.me/BlumCryptoBot/app?startapp=ref_tvX1UKYY9k",
+				url: LINKS.tg_ref,
 			}
 		},
 	},
