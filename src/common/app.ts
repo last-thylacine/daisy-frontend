@@ -2,11 +2,11 @@ import WebApp from '@twa-dev/sdk'
 import { createEffect, createRoot } from "solid-js"
 import { createStore } from "solid-js/store"
 
+import { api, initWS } from './api'
 import { UPGRADES } from './UPGRADES'
 import { TASKS } from './TASKS'
 import { INVITE_TASKS } from './INVITE_TASKS'
 import { INIT_DATA_UNSAFE } from './INIT_DATA'
-import { api } from './api'
 
 const createInitData = () => {
 	const { initData, initDataUnsafe } = WebApp
@@ -50,7 +50,10 @@ function createApp() {
 	const openSettings = () => setStore('settingsOpen', true)
 	const closeSettings = () => setStore('settingsOpen', false)
 	createEffect(() => {
-		api.init().then(init => setStore(store => ({ ...store, ...init })))
+		api.init().then(init => {
+			setStore(store => ({ ...store, ...init }))
+			initWS()
+		})
 	})
 	return {
 		store,
