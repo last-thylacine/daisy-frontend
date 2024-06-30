@@ -1,8 +1,16 @@
 import WebApp from '@twa-dev/sdk'
 import { INIT_DATA } from './INIT_DATA'
 
-export const SERVER_URL = 'https://dirtnmeat.dev'
-const API_URL = `${SERVER_URL}/api`
+const SERVER_TLD = 'dirtnmeat.dev'
+export const SERVER_URL = `https://${SERVER_TLD}`
+export const API_URL = `https://${SERVER_TLD}/api`
+export const WS_URL = `ws://${SERVER_TLD}/ws/`
+
+const socket = new WebSocket(WS_URL)
+
+socket.addEventListener("message", (event) => {
+	console.log("Message from server ", event.data);
+})
 
 const createInitData = () => {
 	const { initData } = WebApp
