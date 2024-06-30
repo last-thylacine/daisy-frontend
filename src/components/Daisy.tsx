@@ -1,3 +1,4 @@
+import WebApp from '@twa-dev/sdk'
 import { Component } from 'solid-js'
 
 import { app } from "../common/app"
@@ -41,6 +42,7 @@ export const Daisy: Component = () => {
 			for (const touch of e.changedTouches) {
 				createParticle(touch.clientX, touch.clientY, store.multi_flower)
 			}
+			WebApp.HapticFeedback.impactOccurred("light")
 			tap()
 		}
 	}
