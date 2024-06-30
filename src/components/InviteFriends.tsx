@@ -1,5 +1,8 @@
+import WebApp from '@twa-dev/sdk'
 import { Component } from 'solid-js'
 
+import { LINKS } from '../common/LINKS'
+import { writeToClipboard } from '../common/writeToClipboard'
 import { Button } from './Button'
 import { InviteTaskListItem } from './InviteTaskListItem'
 import css from './InviteFriends.module.scss'
@@ -10,14 +13,21 @@ const t = {
 }
 
 export const InviteFriends: Component = () => {
-	const copy = () => {}
+	const invite = () => {
+		WebApp.openTelegramLink(LINKS.tg_invite)
+	}
+	const copy = () => {
+		writeToClipboard(LINKS.tg_ref)
+	}
 	return (
 		<>
 			<div class={css.tasks}>
 				<InviteTaskListItem id="0" />
 				<InviteTaskListItem id="1" />
 			</div>
-			<Button onCopyClick={copy}>
+			<Button
+				onClick={invite}
+				onCopyClick={copy}>
 				{t.invite}
 			</Button>
 			<div class={css.terms}>
