@@ -1,6 +1,6 @@
 import WebApp from '@twa-dev/sdk'
 import { createEffect, createRoot } from "solid-js"
-import { createStore } from "solid-js/store"
+import { createStore, produce } from "solid-js/store"
 
 import { api } from './api'
 import { ws } from './ws'
@@ -44,8 +44,17 @@ function createApp() {
 		},
 	})
 	const tap = () => {
-		if (store.coins != null && store.multi_flower != null) {
-			setStore("coins", store.coins + store.multi_flower)
+		if (
+			store.coins != null &&
+			store.multi_flower != null
+		) {
+			setStore(
+				produce((state) => {
+					state.coins = state.coins! + state.multi_flower!
+					state.energy = state.energy! - state.multi_flower!
+				})
+			)
+			ws.tap()
 		}
 	}
 	const openSettings = () => setStore('settingsOpen', true)

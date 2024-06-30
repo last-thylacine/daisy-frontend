@@ -3,6 +3,7 @@ import { WS_URL } from "./api"
 let socket: WebSocket
 
 const init = () => {
+	console.log('ws.init')
 	try {
 		socket = new WebSocket(WS_URL)
 	
@@ -15,6 +16,7 @@ const init = () => {
 }
 
 const tap = () => {
+	console.log('ws.tap')
 	if (!socket) return
 	
 	const msg = JSON.stringify({
