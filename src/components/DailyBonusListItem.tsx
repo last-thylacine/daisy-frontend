@@ -1,7 +1,8 @@
-import { Component } from 'solid-js'
+import { Component, Match, Switch } from 'solid-js'
 
 import { DAILY_BONUS } from '../common/DAILY_BONUS'
 import coinIcon from '../assets/images/dz_32x32_3x.png'
+import checkIcon from '../assets/images/check_24.svg'
 import { Column } from './Column'
 import css from './DailyBonusListItem.module.scss'
 
@@ -40,7 +41,21 @@ export const DailyBonusListItem: Component<Props> = (props) => {
 				height="32"
 				src={coinIcon}
 			/>
-			<div class={css.reward}>{data().reward_fmt}</div>
+			<div class={css.reward}>
+				<Switch>
+					<Match when={status() === 'CLAIMED'}>
+						<img
+							draggable="false"
+							width="24"
+							height="26"
+							src={checkIcon}
+						/>
+					</Match>
+					<Match when={status() !== 'CLAIMED'}>
+						{data().reward_fmt}
+					</Match>
+				</Switch>
+			</div>
 		</Column>
 	)
 }
