@@ -3,6 +3,7 @@ import { useNavigate } from '@solidjs/router'
 import { Component } from 'solid-js'
 
 import { app } from '../common/app'
+import { api } from '../common/api'
 import coinIcon from "../assets/images/dz_32x32_3x.png"
 import { Drawer } from './Drawer'
 import css from './UpgradeDrawer.module.scss'
@@ -31,11 +32,13 @@ export const UpgradeDrawer: Component<Props> = (props) => {
 	const close = () => navigate("/grow/farm/")
 	const handleSubmit = () => {
 		if (props.id === "multi_flower" && store.multi_flower !== null && store.coins !== null) {
+			api.upgrade_buy(1, store.multi_flower + 1)
 			setStore("coins", coins => coins! - data().cost(level()!))
 			setStore("multi_flower", multi_flower => multi_flower! + 1)
 			close()
 		}
 		if (props.id === "water_power" && store.water_power !== null && store.coins !== null) {
+			api.upgrade_buy(2, store.water_power + 1)
 			setStore("coins", coins => coins! - data().cost(level()!))
 			setStore("water_power", water_power => water_power! + 1)
 			close()

@@ -116,7 +116,7 @@ const dailybonus_use = async () => {
 	return result
 }
 
-const upgrade_buy = async (upgrade_id: string, upgrade_to_level: number) => {
+const upgrade_buy = async (upgrade_id: number, upgrade_to_level: number) => {
 	let result
 	try {
 		result = await post('/upgrades/buy', { upgrade_id, upgrade_to_level })
