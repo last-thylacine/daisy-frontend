@@ -2,6 +2,7 @@ import WebApp from '@twa-dev/sdk'
 import { Component } from 'solid-js'
 
 import { app } from "../common/app"
+import { ws } from '../common/ws'
 import flowerImage from "../assets/images/flower.svg"
 import css from './Daisy.module.scss'
 
@@ -46,6 +47,7 @@ export const Daisy: Component = () => {
 				WebApp.HapticFeedback.impactOccurred("light")
 			}
 			tap()
+			ws.tap()
 		}
 	}
 	return (

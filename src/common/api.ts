@@ -6,18 +6,6 @@ export const SERVER_URL = `https://${SERVER_TLD}`
 export const API_URL = `https://${SERVER_TLD}/api`
 export const WS_URL = `wss://${SERVER_TLD}/ws/`
 
-export const initWS = () => {
-	try {
-		const socket = new WebSocket(WS_URL)
-	
-		socket.addEventListener("message", (event) => {
-			console.log("Message from server ", event.data);
-		})
-	} catch (e) {
-		console.error('Error initializing WebSocket: ', e)
-	}
-}
-
 const createInitData = () => {
 	const { initData } = WebApp
 	return initData || INIT_DATA
