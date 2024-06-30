@@ -1,0 +1,62 @@
+{
+	"1": {
+		"id": 1,
+		"class": "join_tg,channel",
+		"icon": "task_tg_40x40_3x.png",
+		"title": "Join our TG channel",
+		"description": "Subscribe to our TG channel and click Check to get reward",
+		"data": "https://t.me/channellink",
+		"reward": 100000,
+		"is_active": true,
+		"started_time": 0,
+		"is_done": false
+	},
+	"2": {
+		"id": 2,
+		"class": "join_tg,chat",
+		"icon": "task_tg_40x40_3x.png",
+		"title": "Join our TG chat",
+		"description": "Join our TG chat and click Check to get reward",
+		"data": "https://t.me/chatlink",
+		"reward": 5000,
+		"is_active": true,
+		"started_time": 0,
+		"is_done": false
+	},
+	"3": {
+		"id": 3,
+		"class": "join_ext",
+		"icon": "task_x_40x40_3x.png",
+		"title": "Follow our X account",
+		"description": "Follow us on X and click Check to get reward",
+		"data": "https://x.com/daisy",
+		"reward": 5000,
+		"is_active": true,
+		"started_time": 0,
+		"is_done": false
+	},
+	"4": {
+		"id": 4,
+		"class": "join_ext",
+		"icon": "task_ig_40x40_3x.png",
+		"title": "Follow our Instagram",
+		"description": "Follow us on Instagram and click Check to get reward",
+		"data": "https://instagram.com/daisy",
+		"reward": 5000,
+		"is_active": true,
+		"started_time": 0,
+		"is_done": false
+	},
+	"5": {
+		"id": 5,
+		"class": "invite,3",
+		"icon": "task_friends_40x40_3x.png",
+		"title": "Invite 3 friends",
+		"description": "Invite 3 friends and click Claim to get reward",
+		"data": "https://instagram.com/daisy",
+		"reward": 5000,
+		"is_active": true,
+		"started_time": 0,
+		"is_done": false
+	}
+}

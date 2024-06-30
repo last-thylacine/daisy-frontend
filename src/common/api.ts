@@ -3,7 +3,7 @@ import { INIT_DATA } from './INIT_DATA'
 
 const SERVER_TLD = 'dirtnmeat.dev'
 export const SERVER_URL = `https://${SERVER_TLD}`
-export const API_URL = `https://${SERVER_TLD}/api`
+export const API_URL = `/api`
 export const WS_URL = `wss://${SERVER_TLD}/ws/`
 
 const createInitData = () => {
@@ -38,35 +38,6 @@ const post_uri = async (path: string, body: string) => {
 
 const ignore = (e: any) => console.warn('API error ignored:', e)
 
-// {
-// 	"user": {
-// 		"id": 1,
-// 		"tg_id": 1181857472,
-// 		"first_name": "there is nothing to do",
-// 		"last_name": "",
-// 		"username": "abacaba123",
-// 		"avatar": "",
-// 		"language_code": "",
-// 		"allows_write_to_pm": false,
-// 		"reg_time": 0,
-// 		"last_seen": 0,
-// 		"player_id": 1,
-// 		"is_premium": false
-// 	},
-// 	"player": {
-// 		"id": 1,
-// 		"energy": 1000,
-// 		"coins": 0,
-// 		"last_updated_time": 0,
-// 		"max_energy": 1000,
-// 		"energy_level": 0,
-// 		"tap_level": 0,
-// 		"last_daily_bonus": 0,
-// 		"daily_bonus_level": 0
-// 	},
-// 	"coins_per_tap": 1
-// }
-
 const init = async () => {
 	let result
 	try {
@@ -87,6 +58,17 @@ const init = async () => {
 		}
 	}
 	console.log('init', result)
+	return result
+}
+
+const task_getall = async () => {
+	let result
+	try {
+		result = await get('/tasks/')
+	} catch (e) {
+		ignore(e)
+	}
+	console.log('task_getall', result)
 	return result
 }
 
@@ -123,28 +105,6 @@ const task_claim = async (task_id: string) => {
 	return result
 }
 
-const upgrade_buy = async (upgrade_id: string, upgrade_to_level: number) => {
-	let result
-	try {
-		result = await post('/upgrades/buy', { upgrade_id, upgrade_to_level })
-	} catch (e) {
-		ignore(e)
-	}
-	console.log('upgrade_buy', result)
-	return result
-}
-
-const task_getall = async () => {
-	let result
-	try {
-		result = await get('/tasks/')
-	} catch (e) {
-		ignore(e)
-	}
-	console.log('task_getall', result)
-	return result
-}
-
 const dailybonus_use = async () => {
 	let result
 	try {
@@ -153,6 +113,17 @@ const dailybonus_use = async () => {
 		ignore(e)
 	}
 	console.log('dailybonus_use', result)
+	return result
+}
+
+const upgrade_buy = async (upgrade_id: string, upgrade_to_level: number) => {
+	let result
+	try {
+		result = await post('/upgrades/buy', { upgrade_id, upgrade_to_level })
+	} catch (e) {
+		ignore(e)
+	}
+	console.log('upgrade_buy', result)
 	return result
 }
 

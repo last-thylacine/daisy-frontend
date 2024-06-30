@@ -6,6 +6,7 @@ import { LINKS } from "./LINKS"
 
 export const TASKS = [
 	{
+		server_id: 1,
 		id: "tg_channel",
 		icon: tgIcon,
 		title: "Join our TG channel",
@@ -26,6 +27,7 @@ export const TASKS = [
 		},
 	},
 	{
+		server_id: 2,
 		id: "tg_chat",
 		icon: tgIcon,
 		title: "Join our TG chat",
@@ -46,6 +48,7 @@ export const TASKS = [
 		},
 	},
 	{
+		server_id: 3,
 		id: "x",
 		icon: xIcon,
 		title: "Follow our X account",
@@ -66,6 +69,7 @@ export const TASKS = [
 		},
 	},
 	{
+		server_id: 4,
 		id: "instagram",
 		icon: igIcon,
 		title: "Follow our Instagram",
@@ -86,6 +90,7 @@ export const TASKS = [
 		},
 	},
 	{
+		server_id: 5,
 		id: "invite_3_friends",
 		icon: friendsIcon,
 		title: "Invite 3 friends",
