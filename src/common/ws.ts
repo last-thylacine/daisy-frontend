@@ -19,16 +19,16 @@ const tap = () => {
 	
 	const msg = JSON.stringify({
 		'type_': "tap",
-		'payload': {
+		'payload': JSON.stringify({
 			taps: [
 				{
 					x: 50,
 					y: 50,
 					time: Date.now(),
-					ms: 20 + 30*Math.random(),
+					ms: 20 + Math.round(30*Math.random()),
 				},
 			],
-		},
+		}),
 	})
 
 	socket.send(msg)
