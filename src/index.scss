@@ -1,5 +1,5 @@
 :root {
-	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	font-family: SF Pro Rounded, sans-serif;
 	line-height: 1.5;
 	font-weight: 400;
 
@@ -66,29 +66,29 @@ button:focus-visible {
 
 // CUSTOM STYLES
 
-@font-face {
-	font-family: SF Pro Rounded;
-	src: url("./assets/fonts/SF-Pro-Rounded/SF-Pro-Rounded-Regular.otf");
-	font-weight: 400;
-}
+// @font-face {
+// 	font-family: SF Pro Rounded;
+// 	src: url("./assets/fonts/SF-Pro-Rounded/SF-Pro-Rounded-Regular.otf");
+// 	font-weight: 400;
+// }
 
-@font-face {
-	font-family: SF Pro Rounded;
-	src: url("./assets/fonts/SF-Pro-Rounded/SF-Pro-Rounded-Medium.otf");
-	font-weight: 500;
-}
+// @font-face {
+// 	font-family: SF Pro Rounded;
+// 	src: url("./assets/fonts/SF-Pro-Rounded/SF-Pro-Rounded-Medium.otf");
+// 	font-weight: 500;
+// }
 
-@font-face {
-	font-family: SF Pro Rounded;
-	src: url("./assets/fonts/SF-Pro-Rounded/SF-Pro-Rounded-Semibold.otf");
-	font-weight: 600;
-}
+// @font-face {
+// 	font-family: SF Pro Rounded;
+// 	src: url("./assets/fonts/SF-Pro-Rounded/SF-Pro-Rounded-Semibold.otf");
+// 	font-weight: 600;
+// }
 
-@font-face {
-	font-family: SF Pro Rounded;
-	src: url("./assets/fonts/SF-Pro-Rounded/SF-Pro-Rounded-Bold.otf");
-	font-weight: 700;
-}
+// @font-face {
+// 	font-family: SF Pro Rounded;
+// 	src: url("./assets/fonts/SF-Pro-Rounded/SF-Pro-Rounded-Bold.otf");
+// 	font-weight: 700;
+// }
 
 :root {
 	// the color from figma is identical to devtools highlight color, so i change it
