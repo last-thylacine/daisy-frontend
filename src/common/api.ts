@@ -38,26 +38,29 @@ const ignore = (e: any) => console.warn('API error ignored:', e)
 
 // {
 // 	"user": {
-// 		"id": 5,
+// 		"id": 1,
 // 		"tg_id": 1181857472,
 // 		"first_name": "there is nothing to do",
 // 		"last_name": "",
 // 		"username": "abacaba123",
 // 		"avatar": "",
-// 		"language_code": "en",
-// 		"allows_write_to_pm": true,
+// 		"language_code": "",
+// 		"allows_write_to_pm": false,
 // 		"reg_time": 0,
 // 		"last_seen": 0,
-// 		"player_id": 2
+// 		"player_id": 1,
+// 		"is_premium": false
 // 	},
 // 	"player": {
-// 		"id": 2,
+// 		"id": 1,
 // 		"energy": 1000,
 // 		"coins": 0,
 // 		"last_updated_time": 0,
 // 		"max_energy": 1000,
 // 		"energy_level": 0,
-// 		"tap_level": 0
+// 		"tap_level": 0,
+// 		"last_daily_bonus": 0,
+// 		"daily_bonus_level": 0
 // 	},
 // 	"coins_per_tap": 1
 // }
