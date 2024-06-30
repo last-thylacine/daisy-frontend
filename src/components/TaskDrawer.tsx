@@ -2,6 +2,7 @@ import WebApp from '@twa-dev/sdk'
 import { Component } from 'solid-js'
 
 import { app } from '../common/app'
+import { api } from '../common/api'
 import { fmtNumber } from '../common/fmtNumber'
 import { writeToClipboard } from '../common/writeToClipboard'
 import coinIcon from '../assets/images/dz_32x32_3x.png'
@@ -18,11 +19,22 @@ type Props = {
 export const TaskDrawer: Component<Props> = (props) => {
 	const { store } = app
 	const data = () => store.tasks.find(({id}) => id === props.id)!
+	const handlePrimaryClick = () => {
+		const action = data().ui.primary.action
+		const url = data().ui.primary.url
+		if (action === 'CHECK')
+			return api.task_check(data().id)
+		if (!url) return
+		if (url.startsWith('https://t.me/'))
+			return WebApp.openTelegramLink(url)
+		return WebApp.openLink(url)
+	}
 	const handleSecondaryClick = () => {
 		const action = data().ui.secondary.action
 		const url = data().ui.secondary.url
 		if (action === 'COPY')
 			return writeToClipboard(url)
+		if (!url) return
 		if (url.startsWith('https://t.me/'))
 			return WebApp.openTelegramLink(url)
 		return WebApp.openLink(url)
@@ -54,7 +66,9 @@ export const TaskDrawer: Component<Props> = (props) => {
 					{data().ui.secondary.text}
 				</div>
 			</Row>
-			<Button class={css.primaryButton}>
+			<Button
+				class={css.primaryButton}
+				onClick={handlePrimaryClick}>
 				{data().ui.primary.text}
 			</Button>
 		</Drawer>

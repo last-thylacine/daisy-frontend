@@ -4,7 +4,7 @@ import { INIT_DATA } from './INIT_DATA'
 const SERVER_TLD = 'dirtnmeat.dev'
 export const SERVER_URL = `https://${SERVER_TLD}`
 export const API_URL = `https://${SERVER_TLD}/api`
-export const WS_URL = `ws://${SERVER_TLD}/ws/`
+export const WS_URL = `wss://${SERVER_TLD}/ws/`
 
 const socket = new WebSocket(WS_URL)
 
