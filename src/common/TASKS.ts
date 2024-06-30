@@ -2,6 +2,7 @@ import tgIcon from "../assets/images/task_tg_40x40_3x.png"
 import igIcon from "../assets/images/task_ig_40x40_3x.png"
 import xIcon from "../assets/images/task_x_40x40_3x.png"
 import friendsIcon from "../assets/images/task_friends_40x40_3x.png"
+import { INVITE } from "./INVITE"
 
 export const TASKS = [
 	{
@@ -92,18 +93,17 @@ export const TASKS = [
 		ui: {
 			primary: {
 				text: "Invite friends",
-				action: "INVITE",
+				url: INVITE.url,
 			},
 			secondary: {
 				icon: "COPY",
+				url: "https://t.me/BlumCryptoBot/app?startapp=ref_tvX1UKYY9k",
 				action: "COPY",
-				// url: "copy://",
-				url: "https://t.me/abacaba123",
 			},
 			primary_final: {
-				text: "Invite more friends",
-				url: "https://t.me/abacaba123",
 				icon: "COPY",
+				text: "Invite more friends",
+				url: "https://t.me/BlumCryptoBot/app?startapp=ref_tvX1UKYY9k",
 			}
 		},
 	},
