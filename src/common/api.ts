@@ -69,8 +69,8 @@ const init = async () => {
 		result = {
 			coins:         json.player.coins,
 			energy:        json.player.energy,
-			multi_flower:  json.player.tap_level,
-			water_power:   json.player.energy_level,
+			multi_flower:  json.player.tap_level + 1,
+			water_power:   json.player.energy_level + 1,
 		}
 	} catch (e) {
 		ignore(e)
