@@ -7,11 +7,15 @@ export const API_URL = `https://${SERVER_TLD}/api`
 export const WS_URL = `wss://${SERVER_TLD}/ws/`
 
 export const initWS = () => {
-	const socket = new WebSocket(WS_URL)
-
-	socket.addEventListener("message", (event) => {
-		console.log("Message from server ", event.data);
-	})
+	try {
+		const socket = new WebSocket(WS_URL)
+	
+		socket.addEventListener("message", (event) => {
+			console.log("Message from server ", event.data);
+		})
+	} catch (e) {
+		console.error('Error initializing WebSocket: ', e)
+	}
 }
 
 const createInitData = () => {
