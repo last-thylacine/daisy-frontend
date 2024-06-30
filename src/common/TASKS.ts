@@ -16,11 +16,11 @@ export const TASKS = [
 			},
 			secondary: {
 				text: "Join",
-				url: "https://t.me/abacaba123",
+				url: "https://t.me/tbilisiton",
 			},
 			primary_final: {
 				text: "Open TG channel",
-				url: "https://t.me/abacaba123",
+				url: "https://t.me/tbilisiton",
 			}
 		},
 	},
@@ -36,11 +36,11 @@ export const TASKS = [
 			},
 			secondary: {
 				text: "Join",
-				url: "https://t.me/abacaba123",
+				url: "https://t.me/ton_breakfast",
 			},
 			primary_final: {
 				text: "Open TG chat",
-				url: "https://t.me/abacaba123",
+				url: "https://t.me/ton_breakfast",
 			}
 		},
 	},
@@ -55,12 +55,12 @@ export const TASKS = [
 				action: "CHECK",
 			},
 			secondary: {
-				text: "Join",
-				url: "https://t.me/abacaba123",
+				text: "Follow",
+				url: "https://x.com/elonmusk",
 			},
 			primary_final: {
-				text: "Open TG chat",
-				url: "https://t.me/abacaba123",
+				text: "Open X account",
+				url: "https://x.com/elonmusk",
 			}
 		},
 	},
@@ -75,12 +75,12 @@ export const TASKS = [
 				action: "CHECK",
 			},
 			secondary: {
-				text: "Join",
-				url: "https://t.me/abacaba123",
+				text: "Follow",
+				url: "https://www.instagram.com/beeple_crap/",
 			},
 			primary_final: {
-				text: "Open TG chat",
-				url: "https://t.me/abacaba123",
+				text: "Open Instagram account",
+				url: "https://www.instagram.com/beeple_crap/",
 			}
 		},
 	},
