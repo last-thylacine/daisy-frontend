@@ -42,7 +42,9 @@ export const Daisy: Component = () => {
 			for (const touch of e.changedTouches) {
 				createParticle(touch.clientX, touch.clientY, store.multi_flower)
 			}
-			WebApp.HapticFeedback.impactOccurred("light")
+			if (store.settings.vibration) {
+				WebApp.HapticFeedback.impactOccurred("light")
+			}
 			tap()
 		}
 	}

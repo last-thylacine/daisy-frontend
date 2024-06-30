@@ -30,3 +30,5 @@ selection
 fonts
 
 preload pages
+
+android version font-family: "Rubik"

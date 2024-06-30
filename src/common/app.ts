@@ -36,16 +36,29 @@ function createApp() {
 		tasks: TASKS,
 		invite_tasks: INVITE_TASKS,
 		friends: [],
+		settingsOpen: false,
+		settings: {
+			lang: 'en',
+			vibration: true,
+		},
 	})
 	const tap = () => {
 		if (store.coins != null && store.multi_flower != null) {
 			setStore("coins", store.coins + store.multi_flower)
 		}
 	}
+	const openSettings = () => setStore('settingsOpen', true)
+	const closeSettings = () => setStore('settingsOpen', false)
 	createEffect(() => {
 		api.init().then(init => setStore(store => ({ ...store, ...init })))
 	})
-	return { store, setStore, tap }
+	return {
+		store,
+		setStore,
+		tap,
+		openSettings,
+		closeSettings,
+	}
 }
 
 export const app = createRoot(createApp)
