@@ -19,6 +19,6 @@ mixins for typography?
 prerender routes | preload pages
 rename.sh
 if PROD ...
-localstorage
+localstorage | cloud storage
 android version font-family: "Rubik"
 touch-action: none; in bigger radius
