@@ -38,15 +38,21 @@ const post_uri = async (path: string, body: string) => {
 
 const ignore = (e: any) => console.warn('API error ignored:', e)
 
+// ###########################################
+// #                   API                   #
+// ###########################################
+
 const init = async () => {
 	let result
 	try {
 		const json = await post_uri('/users/init', createInitData())
 		result = {
-			coins:         json.player.coins,
-			energy:        json.player.energy,
-			multi_flower:  json.player.tap_level + 1,
-			water_power:   json.player.energy_level + 1,
+			coins:             json.player.coins,
+			energy:            json.player.energy,
+			multi_flower:      json.player.tap_level + 1,
+			water_power:       json.player.energy_level + 1,
+			last_daily_bonus:  json.player.last_daily_bonus,
+			daily_bonus_level: json.player.daily_bonus_level,
 		}
 	} catch (e) {
 		ignore(e)
@@ -55,6 +61,8 @@ const init = async () => {
 			energy:          1000,
 			multi_flower:       1,
 			water_power:        1,
+			last_daily_bonus:   0,
+			daily_bonus_level:  0,
 		}
 	}
 	console.log('init', result)

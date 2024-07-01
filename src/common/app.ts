@@ -16,25 +16,15 @@ const createInitData = () => {
 	return initData !== "" ? initDataUnsafe : INIT_DATA_UNSAFE
 }
 
-// // controlled by client
-// coins_delta: 0,
-
-// // controlled by server
-// coins: null as number | null,
-
-// // derived value
-// // coins_display = coins + coins_delta
-// coins_display: null as number | null,
-
 function createApp() {
 	const [store, setStore] = createStore({
 		initialized: false,
 		coins: null as number | null,
-		// coins_per_tap: null as number | null,
 		energy: null as number | null,
-		// max_energy: null as number | null,
 		multi_flower: null as number | null,
 		water_power: null as number | null,
+		last_daily_bonus: null as number | null,
+		daily_bonus_level: null as number | null,
 		initData: createInitData(),
 		upgrades: UPGRADES,
 		tasks: TASKS,

@@ -1,8 +1,10 @@
 ## todo
 
-[ ] ws: update on message
-[ ] upgrades: negative check, disabled state
-[ ] energy: negative check
+[x] ws: update on message
+[x] upgrades: negative check
+[ ] upgrades: disabled state
+[ ] upgrades: backend ok/error handling
+[x] energy: negative check
 [ ] tasks: backend data to store
 [ ] tasks: completed state
 [ ] tasks: start, check, claim
@@ -17,8 +19,8 @@
 extension to check pixel perfect layout
 mixins for typography?
 prerender routes | preload pages
-rename.sh
-if PROD ...
+./rename.sh
+if (PROD) {...}
 localstorage | cloud storage
-android version font-family: "Rubik"
+the 'font' problem: SF Pro | Rubik | Inter
 touch-action: none; in bigger radius

@@ -1,4 +1,3 @@
-/* eslint solid/reactivity: 0 */ 
 import { useNavigate } from '@solidjs/router'
 import { Component } from 'solid-js'
 import { produce } from 'solid-js/store'

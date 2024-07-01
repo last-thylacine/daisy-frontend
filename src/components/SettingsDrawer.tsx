@@ -18,11 +18,12 @@ type Props = {
 }
 
 export const SettingsDrawer: Component<Props> = (props) => {
-	const { setStore } = app
+	const { store, setStore } = app
 	return (
 		<Drawer onClose={props.onClose}>
 			<div class={css.title}>{t.title}</div>
 			<Select
+				value={store.settings.haptic_feedback ?? ''}
 				options={SETTINGS.haptic_feedback}
 				onChange={(new_value: HapticFeedbackStyle | "") => {
 					setStore("settings", "haptic_feedback", new_value || null)
