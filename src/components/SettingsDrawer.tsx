@@ -1,5 +1,6 @@
 import { Component } from 'solid-js'
 
+import { version } from '../../package.json'
 import { app } from '../common/app'
 import { SETTINGS } from '../common/SETTINGS'
 import { HapticFeedbackStyle } from '../common/types'
@@ -26,6 +27,7 @@ export const SettingsDrawer: Component<Props> = (props) => {
 					setStore("settings", "haptic_feedback", new_value || null)
 				}}
 			/>
+			<div>{version}</div>
 		</Drawer>
 	)
 }
