@@ -1,4 +1,4 @@
-import { IMPACT_STYLES, NOTIFICATION_TYPES } from "./HAPTIC_FEEDBACK"
+import { IMPACT_STYLES } from "./HAPTIC_FEEDBACK"
 
 const decorate = (value: string) => {
 	const name = `"${value}"`
@@ -12,6 +12,5 @@ export const SETTINGS = {
 			value: "",
 		},
 		...IMPACT_STYLES.map(decorate),
-		...NOTIFICATION_TYPES.map(decorate),
 	]
 }
