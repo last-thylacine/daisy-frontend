@@ -43,7 +43,7 @@ export const DailyBonusButton: Component = () => {
 						src={dzIcon}
 					/>
 					<div class={css.chevronLabel}>
-						{`+${fmtNumber(DAILY_BONUS.rewards[(store.daily_bonus_level ?? 0)+1].reward)}`}
+						{`+${fmtNumber(DAILY_BONUS.rewards[store.daily_bonus_level ?? 0].reward)}`}
 					</div>
 					<img
 						draggable="false"
