@@ -12,7 +12,8 @@
 [ ] daily: button
 [ ] daily: table
 [ ] settings: language
-[ ] settings: haptic feedback
+[x] settings: haptic feedback
+[ ] settings: layout
 
 ## ideas
 
@@ -25,3 +26,4 @@ localstorage | cloud storage
 the 'font' problem: SF Pro | Rubik | Inter
 touch-action: none; in bigger radius
 store.daily_bonus_level ?? 0 | !== null
+disable tapping when energy is empty
