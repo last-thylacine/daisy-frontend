@@ -25,6 +25,8 @@ const createInitData = () => {
 // // coins_display = coins + coins_delta
 // coins_display: null as number | null,
 
+type HapticFeedbackStyle = "light" | "medium" | "heavy" | "rigid" | "soft"
+
 function createApp() {
 	const [store, setStore] = createStore({
 		initialized: false,
@@ -42,7 +44,7 @@ function createApp() {
 		settingsOpen: false,
 		settings: {
 			lang: 'en',
-			vibration: true,
+			haptic_feedback: 'light' as HapticFeedbackStyle | null
 		},
 	})
 	const tap = () => {

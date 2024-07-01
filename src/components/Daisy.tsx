@@ -5,17 +5,17 @@ import { app } from "../common/app"
 import flowerImage from "../assets/images/flower.svg"
 import css from './Daisy.module.scss'
 
-const createTicker = () => {
-	const array = ['light', 'medium', 'heavy', 'rigid', 'soft'] as const
-	let i = 0
-	return () => {
-		const variant = array[i++ % array.length]
-		console.log({variant})
-		return variant
-	}
-}
+// const createTicker = () => {
+// 	const array = ['light', 'medium', 'heavy', 'rigid', 'soft'] as const
+// 	let i = 0
+// 	return () => {
+// 		const variant = array[i++ % array.length]
+// 		console.log({variant})
+// 		return variant
+// 	}
+// }
 
-const ticker = createTicker()
+// const ticker = createTicker()
 
 const createParticle = (left: number, top: number, value: number) => {
 	const particle_text = document.createElement('div')
@@ -54,8 +54,8 @@ export const Daisy: Component = () => {
 			for (const touch of e.changedTouches) {
 				createParticle(touch.clientX, touch.clientY, store.multi_flower)
 			}
-			if (store.settings.vibration) {
-				WebApp.HapticFeedback.impactOccurred(ticker())
+			if (store.settings.haptic_feedback) {
+				WebApp.HapticFeedback.impactOccurred(store.settings.haptic_feedback)
 			}
 			tap()
 		}
