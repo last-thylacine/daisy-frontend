@@ -14,9 +14,9 @@ import './index.scss'
 // const GrowPage = lazy(() => import("./pages/GrowPage"))
 // const FriendsPage = lazy(() => import("./pages/FriendsPage"))
 
-// the only usage of tg api:
 WebApp.ready()
 WebApp.expand()
+WebApp.enableClosingConfirmation()
 
 render(() => (
 	<Router root={App} base={import.meta.env.BASE_URL}>
