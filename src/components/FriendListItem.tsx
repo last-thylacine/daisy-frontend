@@ -9,7 +9,9 @@ type Props = {
 export const FriendListItem: Component<Props> = (props) => {
 	return (
 		<div class={css.container}>
-			{props.username}
+			<div class={css.username}>
+				{props.username}
+			</div>
 		</div>
 	)
 }
