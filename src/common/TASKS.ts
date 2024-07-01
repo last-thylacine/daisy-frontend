@@ -2,7 +2,7 @@ import tgIcon from "../assets/images/task_tg_40x40_3x.png"
 import igIcon from "../assets/images/task_ig_40x40_3x.png"
 import xIcon from "../assets/images/task_x_40x40_3x.png"
 import friendsIcon from "../assets/images/task_friends_40x40_3x.png"
-import { LINKS } from "./LINKS"
+// import { LINKS } from "./LINKS"
 
 export const TASKS = [
 	{
@@ -13,16 +13,14 @@ export const TASKS = [
 		reward: 100000,
 		ui: {
 			primary: {
-				text: "Check",
-				action: "CHECK",
-			},
-			secondary: {
 				text: "Join",
-				url: LINKS.tg_channel,
+				// action: "JOIN_TG_CHANNEL"
+				// url: LINKS.tg_channel,
 			},
 			primary_final: {
 				text: "Open TG channel",
-				url: LINKS.tg_channel,
+				// action: "JOIN_TG_CHANNEL"
+				// url: LINKS.tg_channel,
 			}
 		},
 	},
@@ -34,16 +32,12 @@ export const TASKS = [
 		reward: 5000,
 		ui: {
 			primary: {
-				text: "Check",
-				action: "CHECK",
-			},
-			secondary: {
 				text: "Join",
-				url: LINKS.tg_chat,
+				// url: LINKS.tg_chat,
 			},
 			primary_final: {
 				text: "Open TG chat",
-				url: LINKS.tg_chat,
+				// url: LINKS.tg_chat,
 			}
 		},
 	},
@@ -55,16 +49,12 @@ export const TASKS = [
 		reward: 5000,
 		ui: {
 			primary: {
-				text: "Check",
-				action: "CHECK",
-			},
-			secondary: {
 				text: "Follow",
-				url: LINKS.x,
+				// url: LINKS.x,
 			},
 			primary_final: {
 				text: "Open X account",
-				url: LINKS.x,
+				// url: LINKS.x,
 			}
 		},
 	},
@@ -76,16 +66,12 @@ export const TASKS = [
 		reward: 5000,
 		ui: {
 			primary: {
-				text: "Check",
-				action: "CHECK",
-			},
-			secondary: {
 				text: "Follow",
-				url: LINKS.instagram,
+				// url: LINKS.instagram,
 			},
 			primary_final: {
 				text: "Open Instagram account",
-				url: LINKS.instagram,
+				// url: LINKS.instagram,
 			}
 		},
 	},
@@ -97,18 +83,19 @@ export const TASKS = [
 		reward: 100000,
 		ui: {
 			primary: {
-				text: "Invite friends",
-				url: LINKS.tg_invite,
+				text: "Invite",
+				// text: "Invite friends",
+				// url: LINKS.tg_invite,
 			},
 			secondary: {
 				icon: "COPY",
-				url: LINKS.tg_ref,
-				action: "COPY",
+				// url: LINKS.tg_ref,
+				// action: "COPY",
 			},
 			primary_final: {
 				icon: "COPY",
 				text: "Invite more friends",
-				url: LINKS.tg_ref,
+				// url: LINKS.tg_ref,
 			}
 		},
 	},

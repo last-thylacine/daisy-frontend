@@ -33,8 +33,15 @@ export const SettingsDrawer: Component<Props> = (props) => {
 				}}
 			/>
 			<div>{semver.inc(version, 'patch')}</div>
-			<button onClick={api.dev_reset}>[DEV] reset</button>
-			<button onClick={api.dev_getrich}>[DEV] get rich</button>
+			<button onClick={() => {
+				api.dev_reset()
+				WebApp.close()
+			}}>
+				[DEV] reset account
+			</button>
+			<button onClick={api.dev_getrich}>
+				[DEV] get 10M coins
+			</button>
 		</Drawer>
 	)
 }

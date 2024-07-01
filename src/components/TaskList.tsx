@@ -1,6 +1,7 @@
 import { useMatch, useNavigate } from '@solidjs/router'
-import { Component, For, Show } from 'solid-js'
+import { Component, For, Show, createEffect, createResource } from 'solid-js'
 
+import { api } from '../common/api'
 import { TASKS } from '../common/TASKS'
 import { ListLabel } from './ListLabel'
 import { TaskDrawer } from './TaskDrawer'
@@ -12,6 +13,10 @@ const t = {
 }
 
 export const TaskList: Component = () => {
+	const [backend_data] = createResource(() => api.task_getall())
+	createEffect(() => {
+		console.log(backend_data())
+	})
 	const navigate = useNavigate()
 	const openTask = (id?: string) => {
 		if (id) navigate(`/earn/task/${id}`, { scroll: false })
@@ -35,6 +40,7 @@ export const TaskList: Component = () => {
 				<TaskDrawer
 					id={task()!.params.task_id}
 					onClose={openTask}
+					backend_data={backend_data}
 				/>
 			</Show>
 		</>

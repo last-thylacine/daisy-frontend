@@ -80,7 +80,7 @@ const task_getall = async () => {
 	return result
 }
 
-const task_start = async (task_id: string) => {
+const task_start = async (task_id: number) => {
 	let result
 	try {
 		result = await post('/tasks/start', { task_id })
@@ -91,7 +91,7 @@ const task_start = async (task_id: string) => {
 	return result
 }
 
-const task_check = async (task_id: string) => {
+const task_check = async (task_id: number) => {
 	let result
 	try {
 		result = await post('/tasks/check', { task_id })
@@ -102,7 +102,7 @@ const task_check = async (task_id: string) => {
 	return result
 }
 
-const task_claim = async (task_id: string) => {
+const task_claim = async (task_id: number) => {
 	let result
 	try {
 		result = await post('/tasks/claim', { task_id })
