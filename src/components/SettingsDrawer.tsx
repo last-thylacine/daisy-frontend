@@ -1,3 +1,4 @@
+import semver from 'semver'
 import { Component } from 'solid-js'
 
 import { version } from '../../package.json'
@@ -29,7 +30,7 @@ export const SettingsDrawer: Component<Props> = (props) => {
 					setStore("settings", "haptic_feedback", new_value || null)
 				}}
 			/>
-			<div>{version}</div>
+			<div>{semver.inc(version, 'patch')}</div>
 			<button onClick={api.dev_reset}>[DEV] reset</button>
 			<button onClick={api.dev_getrich}>[DEV] get rich</button>
 		</Drawer>
