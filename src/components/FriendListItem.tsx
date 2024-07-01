@@ -2,8 +2,14 @@ import { Component } from 'solid-js'
 
 import css from './FriendListItem.module.scss'
 
-export const FriendListItem: Component = () => {
+type Props = {
+	username: string
+}
+
+export const FriendListItem: Component<Props> = (props) => {
 	return (
-		<div class={css.container} />
+		<div class={css.container}>
+			{props.username}
+		</div>
 	)
 }

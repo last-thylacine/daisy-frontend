@@ -1,6 +1,7 @@
-import { Component, For } from 'solid-js'
+import { Component, For, createEffect, createResource } from 'solid-js'
 
-import { app } from '../common/app'
+// import { app } from '../common/app'
+import { api } from '../common/api'
 import { ListLabel } from './ListLabel'
 import { FriendListItem } from './FriendListItem'
 import css from './FriendList.module.scss'
@@ -11,16 +12,21 @@ const t = {
 }
 
 export const FriendList: Component = () => {
-	const { store } = app
+	// const { store } = app
+	// const [data, { mutate, refetch }] = createResource(() => api.friends_getall())
+	const [data] = createResource(() => api.friends_getall())
 	const refresh = () => {}
+	createEffect(() => {
+		console.log(data())
+	})
 	return (
 		<>
 			<ListLabel refresh={refresh}>{t.label}</ListLabel>
 			<div class={css.list}>
 				<For
-					each={store.friends}
+					each={data()}
 					fallback={<div class={css.empty}>{t.empty}</div>}>
-					{(_friend) => <FriendListItem />}
+					{(friend) => <FriendListItem username={friend.username} />}
 				</For>
 			</div>
 		</>
