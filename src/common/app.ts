@@ -9,7 +9,7 @@ import { TASKS } from './TASKS'
 import { INVITE_TASKS } from './INVITE_TASKS'
 import { INIT_DATA_UNSAFE } from './INIT_DATA'
 import { ENERGY } from './ENERGY'
-import { HapticFeedbackStyle } from './types'
+import { HapticFeedbackImpactStyle, HapticFeedbackNotificationType } from './HAPTIC_FEEDBACK'
 
 const createInitData = () => {
 	const { initData, initDataUnsafe } = WebApp
@@ -33,7 +33,7 @@ function createApp() {
 		settingsOpen: false,
 		settings: {
 			lang: 'en',
-			haptic_feedback: 'light' as HapticFeedbackStyle | null
+			haptic_feedback: 'light' as HapticFeedbackImpactStyle | HapticFeedbackNotificationType | null
 		},
 	})
 	const tap = () => {

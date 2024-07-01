@@ -2,6 +2,8 @@ import WebApp from '@twa-dev/sdk'
 import { Component } from 'solid-js'
 
 import { app } from "../common/app"
+import { IMPACT_STYLES, NOTIFICATION_TYPES } from '../common/HAPTIC_FEEDBACK'
+import { includes } from '../common/includes'
 import flowerImage from "../assets/images/flower.svg"
 import css from './Daisy.module.scss'
 
@@ -55,7 +57,10 @@ export const Daisy: Component = () => {
 				createParticle(touch.clientX, touch.clientY, store.multi_flower)
 			}
 			if (store.settings.haptic_feedback) {
-				WebApp.HapticFeedback.impactOccurred(store.settings.haptic_feedback)
+				if (includes(IMPACT_STYLES, store.settings.haptic_feedback))
+					WebApp.HapticFeedback.impactOccurred(store.settings.haptic_feedback)
+				if (includes(NOTIFICATION_TYPES, store.settings.haptic_feedback))
+					WebApp.HapticFeedback.notificationOccurred(store.settings.haptic_feedback)
 			}
 			tap()
 		}

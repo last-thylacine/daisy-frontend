@@ -1,11 +1,18 @@
+import WebApp from '@twa-dev/sdk'
 import semver from 'semver'
 import { Component } from 'solid-js'
 
 import { version } from '../../package.json'
+import {
+	HapticFeedbackImpactStyle,
+	HapticFeedbackNotificationType,
+	IMPACT_STYLES,
+	NOTIFICATION_TYPES,
+} from '../common/HAPTIC_FEEDBACK'
 import { app } from '../common/app'
 import { api } from '../common/api'
+import { includes } from '../common/includes'
 import { SETTINGS } from '../common/SETTINGS'
-import { HapticFeedbackStyle } from '../common/types'
 import { Drawer } from './Drawer'
 import { Select } from './Select'
 import css from './SettingsDrawer.module.scss'
@@ -26,8 +33,12 @@ export const SettingsDrawer: Component<Props> = (props) => {
 			<Select
 				value={store.settings.haptic_feedback ?? ''}
 				options={SETTINGS.haptic_feedback}
-				onChange={(new_value: HapticFeedbackStyle | "") => {
+				onChange={(new_value: HapticFeedbackImpactStyle | HapticFeedbackNotificationType | "") => {
 					setStore("settings", "haptic_feedback", new_value || null)
+					if (includes(IMPACT_STYLES, new_value))
+						WebApp.HapticFeedback.impactOccurred(new_value)
+					if (includes(NOTIFICATION_TYPES, new_value))
+						WebApp.HapticFeedback.notificationOccurred(new_value)
 				}}
 			/>
 			<div>{semver.inc(version, 'patch')}</div>
