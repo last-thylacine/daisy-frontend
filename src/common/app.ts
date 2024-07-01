@@ -9,6 +9,7 @@ import { TASKS } from './TASKS'
 import { INVITE_TASKS } from './INVITE_TASKS'
 import { INIT_DATA_UNSAFE } from './INIT_DATA'
 import { ENERGY } from './ENERGY'
+import { HapticFeedbackStyle } from './types'
 
 const createInitData = () => {
 	const { initData, initDataUnsafe } = WebApp
@@ -24,8 +25,6 @@ const createInitData = () => {
 // // derived value
 // // coins_display = coins + coins_delta
 // coins_display: null as number | null,
-
-type HapticFeedbackStyle = "light" | "medium" | "heavy" | "rigid" | "soft"
 
 function createApp() {
 	const [store, setStore] = createStore({
