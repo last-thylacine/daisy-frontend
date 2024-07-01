@@ -16,7 +16,6 @@ import './index.scss'
 
 WebApp.ready()
 WebApp.expand()
-WebApp.enableClosingConfirmation()
 
 render(() => (
 	<Router root={App} base={import.meta.env.BASE_URL}>
