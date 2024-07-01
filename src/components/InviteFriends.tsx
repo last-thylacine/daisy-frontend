@@ -1,6 +1,7 @@
 import WebApp from '@twa-dev/sdk'
 import { Component } from 'solid-js'
 
+import { app } from '../common/app'
 import { LINKS } from '../common/LINKS'
 import { writeToClipboard } from '../common/writeToClipboard'
 import { Button } from './Button'
@@ -13,11 +14,12 @@ const t = {
 }
 
 export const InviteFriends: Component = () => {
+	const { store } = app
 	const invite = () => {
-		WebApp.openTelegramLink(LINKS.tg_invite)
+		WebApp.openTelegramLink(LINKS.tg_invite(store.initData.user!.id))
 	}
 	const copy = () => {
-		writeToClipboard(LINKS.tg_ref)
+		writeToClipboard(LINKS.tg_ref(store.initData.user!.id))
 	}
 	return (
 		<>

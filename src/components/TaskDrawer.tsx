@@ -25,16 +25,24 @@ export const TaskDrawer: Component<Props> = (props) => {
 		if (action === 'CHECK')
 			return api.task_check(data().id)
 		if (!url) return
-		if (url.startsWith('https://t.me/'))
-			return WebApp.openTelegramLink(url)
-		return WebApp.openLink(url)
+		if (typeof url === 'function') {
+			return WebApp.openTelegramLink(url(store.initData.user!.id))
+		}
+		// if (url.startsWith('https://t.me/'))
+		// 	return WebApp.openTelegramLink(url)
+		// return WebApp.openLink(url)
 	}
 	const handleSecondaryClick = () => {
 		const action = data().ui.secondary.action
 		const url = data().ui.secondary.url
 		if (action === 'COPY')
-			return writeToClipboard(url)
+			return (typeof url === 'function')
+				? writeToClipboard(url(store.initData.user!.id))
+				: writeToClipboard(url)
 		if (!url) return
+		if (typeof url === 'function') {
+			return WebApp.openTelegramLink(url(store.initData.user!.id))
+		}
 		if (url.startsWith('https://t.me/'))
 			return WebApp.openTelegramLink(url)
 		return WebApp.openLink(url)
