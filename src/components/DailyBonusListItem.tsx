@@ -1,5 +1,6 @@
 import { Component, Match, Switch } from 'solid-js'
 
+import { app } from '../common/app'
 import { DAILY_BONUS } from '../common/DAILY_BONUS'
 import coinIcon from '../assets/images/dz_32x32_3x.png'
 import checkIcon from '../assets/images/check_24.svg'
@@ -7,9 +8,10 @@ import { Column } from './Column'
 import css from './DailyBonusListItem.module.scss'
 
 const calculateStatus = (i: number): ItemStatus => {
-	const { current_phase } = DAILY_BONUS
-	if (current_phase > i) return 'CLAIMED'
-	if (current_phase === i) return 'UNCLAIMED'
+	const { store } = app
+	const daily_bonus_level = store.daily_bonus_level!
+	if (daily_bonus_level > i) return 'CLAIMED'
+	if (daily_bonus_level === i) return 'UNCLAIMED'
 	return 'INACTIVE'
 }
 

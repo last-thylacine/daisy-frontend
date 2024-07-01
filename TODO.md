@@ -24,3 +24,4 @@ if (PROD) {...}
 localstorage | cloud storage
 the 'font' problem: SF Pro | Rubik | Inter
 touch-action: none; in bigger radius
+store.daily_bonus_level ?? 0 | !== null

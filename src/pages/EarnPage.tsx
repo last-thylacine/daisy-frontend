@@ -14,7 +14,7 @@ const EarnPage = () => (
 			iconWidth="96"
 			iconHeight="96"
 			title={t.earn} />
-		<DailyBonusButton reward={1000} />
+		<DailyBonusButton />
 		<TaskList />
 	</>
 )

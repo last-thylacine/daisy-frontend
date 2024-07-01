@@ -11,14 +11,13 @@ import css from './TopUI.module.scss'
 
 export const TopUI: Component = () => {
 	const { store, openSettings } = app
-	const loaded = () => store.energy !== null && store.water_power !== null
 	const max_energy = () => 500 * (1 + store.water_power!)
 	const timeToRegen = useTimeToRegen()
 	const [showAvatar, setShowAvatar] = createSignal(true)
 	return (
 		<Row class={css.container}>
 			<Chip>
-				<Show when={loaded()}>
+				<Show when={store.initialized}>
 					<Row class={css.row}>
 						<img
 							draggable="false"
@@ -40,7 +39,7 @@ export const TopUI: Component = () => {
 				</Show>
 			</Chip>
 			<Chip onClick={openSettings}>
-				<Show when={loaded()}>
+				<Show when={store.initialized}>
 					<Row class={css.row}>
 						<div class={css.username}>{store.initData.user?.username}</div>
 						<Show when={showAvatar()}>
