@@ -138,10 +138,33 @@ const friends_getall = async () => {
 	return result
 }
 
+const dev_reset = async () => {
+	let result
+	try {
+		result = await post('/dev/delete-me')
+	} catch (e) {
+		ignore(e)
+	}
+	console.log('dev_reset', result)
+	return result
+}
+
+const dev_getrich = async () => {
+	let result
+	try {
+		result = await post('/dev/set-coins', 10_000_000)
+	} catch (e) {
+		ignore(e)
+	}
+	console.log('dev_getrich', result)
+	return result
+}
+
 export const api = {
 	init,
 	task_getall, task_start, task_check, task_claim,
 	dailybonus_use,
 	upgrade_buy,
 	friends_getall,
+	dev_reset, dev_getrich,
 }

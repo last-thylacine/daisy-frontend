@@ -2,6 +2,7 @@ import { Component } from 'solid-js'
 
 import { version } from '../../package.json'
 import { app } from '../common/app'
+import { api } from '../common/api'
 import { SETTINGS } from '../common/SETTINGS'
 import { HapticFeedbackStyle } from '../common/types'
 import { Drawer } from './Drawer'
@@ -28,6 +29,8 @@ export const SettingsDrawer: Component<Props> = (props) => {
 				}}
 			/>
 			<div>{version}</div>
+			<button onClick={api.dev_reset}>[DEV] reset</button>
+			<button onClick={api.dev_getrich}>[DEV] get rich</button>
 		</Drawer>
 	)
 }
