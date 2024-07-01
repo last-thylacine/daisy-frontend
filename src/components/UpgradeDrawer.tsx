@@ -1,6 +1,7 @@
 /* eslint solid/reactivity: 0 */ 
 import { useNavigate } from '@solidjs/router'
 import { Component } from 'solid-js'
+import { produce } from 'solid-js/store'
 
 import { app } from '../common/app'
 import { api } from '../common/api'
@@ -40,9 +41,12 @@ export const UpgradeDrawer: Component<Props> = (props) => {
 			const resulting_level = store.multi_flower + 1
 			if (resulting_balance >= 0) {
 				api.upgrade_buy(1, resulting_level)
-				setStore("coins", resulting_balance)
-				setStore("multi_flower", resulting_level)
-
+				setStore(
+					produce((state) => {
+						state.coins = resulting_balance
+						state.multi_flower = resulting_level
+					})
+				)
 			}
 		}
 		if (
@@ -54,8 +58,12 @@ export const UpgradeDrawer: Component<Props> = (props) => {
 			const resulting_level = store.water_power + 1
 			if (resulting_balance >= 0) {
 				api.upgrade_buy(2, resulting_level)
-				setStore("coins", resulting_balance)
-				setStore("water_power", resulting_level)
+				setStore(
+					produce((state) => {
+						state.coins = resulting_balance
+						state.water_power = resulting_level
+					})
+				)
 			}
 		}
 	}

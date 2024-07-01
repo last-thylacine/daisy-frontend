@@ -87,10 +87,19 @@ function createApp() {
 		}
 	}
 	setInterval(regen, 1000)
+	const update = (coins: number, energy: number) => {
+		setStore(
+			produce((state) => {
+				state.coins = coins
+				state.energy = energy
+			})
+		)
+	}
 	return {
 		store,
 		setStore,
 		tap,
+		update,
 		openSettings,
 		closeSettings,
 	}
