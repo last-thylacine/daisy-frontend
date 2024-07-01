@@ -2,5 +2,5 @@ npm run build
 git add dist
 git commit -m "build" || true
 npm version patch
-git push --no-verify
+git push --no-verify --follow-tags
 exit 1
