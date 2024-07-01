@@ -91,14 +91,8 @@ button:focus-visible {
 }
 
 :root {
-	// the color from figma is identical to devtools highlight color, so i change it
-	// switch to "true" in production (yeah, manually)
-	--true-main-background-color: #8CCEEA;
-	--fixed-main-background-color: #97C1E6;
-	--main-background-color: var(--true-main-background-color);
-	// --main-background-color: var(--fixed-main-background-color);
+	--main-background-color: #8CCEEA;
 	--main-overlay-color: rgba(140, 206, 234, 0.6);
-
 	--main-text-color: #363636;
 	--main-green-color: rgb(208, 240, 80);
 	--main-blue-color: rgb(40, 168, 234);
