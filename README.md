@@ -9,3 +9,9 @@ npm i
 ```bash
 npm run dev
 ```
+
+## Update dependencies
+
+```bash
+npx npm-check-updates -u
+```
