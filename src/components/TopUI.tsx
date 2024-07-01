@@ -10,7 +10,7 @@ import { ProgressBar } from './ProgressBar'
 import css from './TopUI.module.scss'
 
 export const TopUI: Component = () => {
-	const { store } = app
+	const { store, openSettings } = app
 	const loaded = () => store.energy !== null && store.water_power !== null
 	const max_energy = () => 500 * (1 + store.water_power!)
 	const timeToRegen = useTimeToRegen()
@@ -39,7 +39,7 @@ export const TopUI: Component = () => {
 					</ProgressBar>
 				</Show>
 			</Chip>
-			<Chip>
+			<Chip onClick={openSettings}>
 				<Show when={loaded()}>
 					<Row class={css.row}>
 						<div class={css.username}>{store.initData.user?.username}</div>
