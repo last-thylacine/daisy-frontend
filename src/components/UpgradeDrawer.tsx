@@ -31,17 +31,32 @@ export const UpgradeDrawer: Component<Props> = (props) => {
 	}
 	const close = () => navigate("/grow/farm/")
 	const handleSubmit = () => {
-		if (props.id === "multi_flower" && store.multi_flower !== null && store.coins !== null) {
-			api.upgrade_buy(1, store.multi_flower + 1)
-			setStore("coins", coins => coins! - data().cost(level()!))
-			setStore("multi_flower", multi_flower => multi_flower! + 1)
-			close()
+		if (
+			props.id === "multi_flower" &&
+			store.multi_flower !== null &&
+			store.coins !== null
+		) {
+			const resulting_balance = store.coins - data().cost(level()!)
+			const resulting_level = store.multi_flower + 1
+			if (resulting_balance >= 0) {
+				api.upgrade_buy(1, resulting_level)
+				setStore("coins", resulting_balance)
+				setStore("multi_flower", resulting_level)
+
+			}
 		}
-		if (props.id === "water_power" && store.water_power !== null && store.coins !== null) {
-			api.upgrade_buy(2, store.water_power + 1)
-			setStore("coins", coins => coins! - data().cost(level()!))
-			setStore("water_power", water_power => water_power! + 1)
-			close()
+		if (
+			props.id === "water_power" &&
+			store.water_power !== null &&
+			store.coins !== null
+		) {
+			const resulting_balance = store.coins - data().cost(level()!)
+			const resulting_level = store.water_power + 1
+			if (resulting_balance >= 0) {
+				api.upgrade_buy(2, resulting_level)
+				setStore("coins", resulting_balance)
+				setStore("water_power", resulting_level)
+			}
 		}
 	}
 	return (

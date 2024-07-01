@@ -48,16 +48,21 @@ function createApp() {
 	})
 	const tap = () => {
 		if (
+			store.energy != null &&
 			store.coins != null &&
 			store.multi_flower != null
 		) {
-			setStore(
-				produce((state) => {
-					state.coins = state.coins! + state.multi_flower!
-					state.energy = state.energy! - state.multi_flower!
-				})
-			)
-			ws.tap()
+			const resulting_balance = store.coins + store.multi_flower
+			const resulting_energy = store.energy - store.multi_flower
+			if (resulting_energy >= 0) {
+				setStore(
+					produce((state) => {
+						state.coins = resulting_balance
+						state.energy = resulting_energy
+					})
+				)
+				ws.tap()
+			}
 		}
 	}
 	const openSettings = () => setStore('settingsOpen', true)
