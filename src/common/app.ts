@@ -27,6 +27,7 @@ const createInitData = () => {
 
 function createApp() {
 	const [store, setStore] = createStore({
+		initialized: false,
 		coins: null as number | null,
 		// coins_per_tap: null as number | null,
 		energy: null as number | null,
@@ -62,7 +63,11 @@ function createApp() {
 	const closeSettings = () => setStore('settingsOpen', false)
 	createEffect(() => {
 		api.init().then(init => {
-			setStore(store => ({ ...store, ...init }))
+			setStore(store => ({
+				...store,
+				...init,
+				initialized: true,
+			}))
 			ws.init()
 		})
 	})
